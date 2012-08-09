@@ -1,4 +1,5 @@
 library(statnet.common)
-statnet.cite.head("ergm")
+statnet.cite.head("ergm.count")
 statnet.cite.pkg("ergm")
-statnet.cite.foot("ergm")
+statnet.cite.pkg("ergm.count")
+statnet.cite.foot("ergm.count")

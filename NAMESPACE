@@ -1,5 +1,5 @@
 
-useDynLib(ergm)
+useDynLib(ergm.count)
 
 importFrom(utils, packageDescription)
 

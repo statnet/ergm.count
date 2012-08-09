@@ -1,16 +1,13 @@
-Package: ergm
-Version: 3.1-11606-11607.1-2012.08.03-21.06.05
-Date: 2012-08-03
-Title:  Fit, Simulate and Diagnose Exponential-Family Models for Networks
+Package: ergm.count
+Version: 3.1-11610-11614.1-2012.08.09-03.12.47
+Date: 2012-08-09
+Title:  Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count Edges
 Authors@R: c(
-	   person("Mark S.", "Handcock", role=c("aut"), email="handcock@stat.ucla.edu"),
-           person("David R.", "Hunter", role=c("aut","cre"), email="dhunter@stat.psu.edu"),
-   	   person("Carter T.", "Butts", role=c("aut"), email="buttsc@uci.edu"),
-           person("Steven M.", "Goodreau", role=c("aut"), email="goodreau@u.washington.edu"),
-           person("Pavel N.", "Krivitsky", role=c("aut"), email="krivitsky@stat.psu.edu"),
-     	   person("Martina", "Morris", role=c("aut"), email="morrism@u.washington.edu"))
-Depends: statnet.common, network (>= 1.7-1), robustbase, Matrix, trust, nlme, coda
-Suggests: lattice, latticeExtra, sna, Rglpk, snow, latentnet, tergm
-Description: An integrated set of tools to analyze and simulate networks based on exponential-family random graph models (ERGM). "ergm" is a part of the "statnet" suite of packages for network analysis.
+           person("Pavel N.", "Krivitsky", role=c("aut","cre"), email="krivitsky@stat.psu.edu"),
+	   person("Mark S.", "Handcock", role=c("ctb"), email="handcock@stat.ucla.edu"),
+           person("David R.", "Hunter", role=c("ctb"), email="dhunter@stat.psu.edu"))
+LinkingTo: ergm
+Depends: ergm (=3.1)
+Description: A set of extensions for the ergm package to fit weighted networks whose edge weights are counts.
 License: GPL-3 + file LICENSE
 URL: http://statnet.org

@@ -6,7 +6,6 @@
 void MH_Poisson(WtMHproposal *MHp, WtNetwork *nwp);
 void MH_ZIPoisson(WtMHproposal *MHp, WtNetwork *nwp);
 void MH_PoissonNonObserved(WtMHproposal *MHp, WtNetwork *nwp);
-void MH_CompleteOrdering(WtMHproposal *MHp, WtNetwork *nwp);
 
 #endif 
 
