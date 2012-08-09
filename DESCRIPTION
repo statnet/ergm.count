@@ -1,5 +1,5 @@
 Package: ergm.count
-Version: 3.1-11616-11617-2012.08.09-03.47.59
+Version: 3.1-11616-11618-2012.08.09-03.50.57
 Date: 2012-08-09
 Title:  Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count Edges
 Authors@R: c(
@@ -8,6 +8,7 @@ Authors@R: c(
            person("David R.", "Hunter", role=c("ctb"), email="dhunter@stat.psu.edu"))
 LinkingTo: ergm
 Depends: ergm (>= 3.1)
+Enhances: ergm
 Description: A set of extensions for the ergm package to fit weighted networks whose edge weights are counts.
 License: GPL-3 + file LICENSE
 URL: http://statnet.org
