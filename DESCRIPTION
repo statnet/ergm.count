@@ -1,6 +1,6 @@
 Package: ergm.count
-Version: 3.1-11637-2012.08.16-22.48.19
-Date: 2012-08-16
+Version: 3.1-11719.1-2012.09.20-00.10.26
+Date: 2012-09-20
 Title:  Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count Edges
 Authors@R: c(
            person("Pavel N.", "Krivitsky", role=c("aut","cre"), email="krivitsky@stat.psu.edu"),

@@ -1,8 +1,5 @@
 InitWtMHP.Poisson <- function(arguments, nw, response) {
   MHproposal <- list(name = "Poisson", inputs=NULL, package="ergm.count")
-  if(is.bipartite(nw)){
-    MHproposal$name <- "BipartitePoisson"
-  }
   MHproposal
 }
 
@@ -15,16 +12,40 @@ InitWtMHP.ZIPoisson <- function(arguments, nw, response) {
     stop(paste("Invalid jump-to-0 argument to the Zero-Inflated Poisson proposal: must be either omited or a single number in the interval [0,1)."))
   }
   MHproposal <- list(name = "ZIPoisson", inputs=as.double(arguments$p0), package="ergm.count")
-  if(is.bipartite(nw)){
-    MHproposal$name <- "BipartiteZIPoisson"
-  }
   MHproposal
 }
 
 InitWtMHP.PoissonNonObserved <- function(arguments, nw, response) {
   MHproposal <- list(name = "PoissonNonObserved", inputs=ergm.Cprepare.miss(nw), package="ergm.count")
-  if(is.bipartite(nw)){
-    MHproposal$name <- "BipartitePoissonNonObserved"
-  }
+  MHproposal
+}
+
+InitWtMHP.Binomial <- function(arguments, nw, response) {
+  MHproposal <- list(name = "Binomial", inputs=arguments$reference$trials, package="ergm.count")
+  MHproposal
+}
+
+InitWtMHP.BinomialNonObserved <- function(arguments, nw, response) {
+  MHproposal <- list(name = "BinomialNonObserved", inputs=c(arguments$reference$trials,ergm.Cprepare.miss(nw)), package="ergm.count")
+  MHproposal
+}
+
+InitWtMHP.Geometric <- function(arguments, nw, response) {
+  MHproposal <- list(name = "Geometric", inputs=NULL, package="ergm.count")
+  MHproposal
+}
+
+InitWtMHP.GeometricNonObserved <- function(arguments, nw, response) {
+  MHproposal <- list(name = "GeometricNonObserved", inputs=ergm.Cprepare.miss(nw), package="ergm.count")
+  MHproposal
+}
+
+InitWtMHP.DiscUnif <- function(arguments, nw, response) {
+  MHproposal <- list(name = "DiscUnif", inputs=c(arguments$reference$a,arguments$reference$b), package="ergm.count")
+  MHproposal
+}
+
+InitWtMHP.DiscUnifNonObserved <- function(arguments, nw, response) {
+  MHproposal <- list(name = "DiscUnifNonObserved", inputs=c(arguments$reference$a,arguments$reference$b,ergm.Cprepare.miss(nw)), package="ergm.count")
   MHproposal
 }
