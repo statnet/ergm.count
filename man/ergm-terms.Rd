@@ -9,16 +9,18 @@
 \title{Terms used in Exponential Family Random Graph Models Specific to Counts}
 \description{
   This page describes the possible terms (and hence network statistics)
-  specific for modeling count data.
+  included in the \code{\link[=ergm.count-package]{ergm.count}} package.
 
   See the \code{\link[ergm]{ergm-terms}} documentation in the
   \code{ergm} package for a complete description of what ERGM terms are
   and how they are used.
 }
 
-\section{Possible terms to represent network statistics}{
+\section{Terms to represent network statistics included in the
+  \code{\link[=ergm.count-package]{ergm.count}} pacakge}{
 
-  The terms currently available are:
+  All terms listed are valued.
+  
   \describe{
     
     \item{\code{CMP}}{\emph{Conway-Maxwell-Poisson Distribution:}
@@ -33,17 +35,18 @@
   }
 }
 \references{
-Handcock MS, Hunter DR, Butts CT, Goodreau SG, Krivitsky PN and Morris M
+  \itemize{
+    \item Handcock M. S., Hunter D. R., Butts C. T., Goodreau S. G.,
+      Krivitsky P. N. and Morris M.
 (2012). _Fit, Simulate and Diagnose Exponential-Family Models for
 Networks_. Version 3.1.  Project home
 page at <URL: http://www.statnet.org>, <URL:
 CRAN.R-project.org/package=ergm>.
   
-Krivitsky PN (2012). Exponential-Family Random Graph Models for Valued Networks. \emph{Electronic Journal of Statistics}, 2012, 6, 1100-1128. \href{http://dx.doi.org/10.1214/12-EJS696}{\code{doi:10.1214/12-EJS696}}
+\item Krivitsky P. N. (2012). Exponential-Family Random Graph Models for Valued Networks. \emph{Electronic Journal of Statistics}, 2012, 6, 1100-1128. \href{http://dx.doi.org/10.1214/12-EJS696}{\code{doi:10.1214/12-EJS696}}
 
-Shmueli G, Minka TP, Kadane JB, Borle S, and Boatwright P (2005). A Useful Distribution for Fitting Discrete Data: Revival of the Conway--Maxwell--Poisson Distribution. \emph{Journal of the Royal Statistical Society: Series C}, 54(1): 127-142.
-
+\item Shmueli G., Minka T. P., Kadane J. B., Borle S., and Boatwright P. (2005). A Useful Distribution for Fitting Discrete Data: Revival of the Conway--Maxwell--Poisson Distribution. \emph{Journal of the Royal Statistical Society: Series C}, 54(1): 127-142.
 }
-\seealso{ergm, network, \%v\%, \%n\%, sna,
-         summary.ergm, print.ergm}
+}
+\seealso{\code{\link[ergm:ergm-terms]{ergm-terms} (from the \code{\link[=ergm-package]{ergm}} package), \code{\link{ergm}}, \code{\link{network}}, \code{\link{\%v\%}}, \code{\link{\%n\%}}}
 \keyword{models}
