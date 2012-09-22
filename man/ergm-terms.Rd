@@ -48,5 +48,5 @@ CRAN.R-project.org/package=ergm>.
 \item Shmueli G., Minka T. P., Kadane J. B., Borle S., and Boatwright P. (2005). A Useful Distribution for Fitting Discrete Data: Revival of the Conway--Maxwell--Poisson Distribution. \emph{Journal of the Royal Statistical Society: Series C}, 54(1): 127-142.
 }
 }
-\seealso{\code{\link[ergm:ergm-terms]{ergm-terms} (from the \code{\link[=ergm-package]{ergm}} package), \code{\link{ergm}}, \code{\link{network}}, \code{\link{\%v\%}}, \code{\link{\%n\%}}}
+\seealso{\code{\link[ergm:ergm-terms]{ergm-terms}} (from the \code{\link[=ergm-package]{ergm}} package), \code{\link{ergm}}, \code{\link{network}}, \code{\link{\%v\%}}, \code{\link{\%n\%}}}
 \keyword{models}
