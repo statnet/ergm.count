@@ -14,7 +14,7 @@ functions type \code{help(package='ergm')} and
 
 Mainly, it implements Poisson, binomial, geometric, and discrete uniform
 dyadwise reference measures for valued ERGMs (\link[=ergm-references]{documented here}), and provides some
-count-specific change statistics (\link[=valued-ergm-terms]{documented here}).
+count-specific change statistics (\link[=ergm-terms]{documented here}).
 
 For a complete list of the functions, use \code{library(help="ergm")} and \code{library(help="ergm.count")} 
 or read the rest of the manual. 
@@ -42,7 +42,7 @@ go to the Statnet project website:
 A tutorial, support newsgroup, references and links to further resources are provided there.
 }
 
-\seealso{ergm-terms, References}
+\seealso{\code{\link{ergm-terms}, \code{\link{ergm-references}}}}
 
 \author{
 Pavel N. Krivitsky \email{krivitsky@stat.psu.edu}

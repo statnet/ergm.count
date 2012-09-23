@@ -46,7 +46,7 @@
       dyad's baseline distribution to be Poisson with mean 1:
       \eqn{h(y)=\prod_{i,j} 1/y_{i,j}!}, with the support of
       \eqn{y_{i,j}} being natural numbers (and \eqn{0}). Using
-      \code{\link[ergm:valued-ergm-terms]{valued ERGM terms}} that are
+      \code{\link[ergm:ergm-terms]{valued ERGM terms}} that are
       ``generalized'' from their binary counterparts, with form
       \code{"sum"} (see previous link for the list) produces Poisson
       regression. Using \code{\link{CMP}} induces a
@@ -67,9 +67,9 @@
       each dyad's baseline distribution to be uniform on the natural
       numbers (and \eqn{0}): \eqn{h(y)=1}. In itself, this
       "distribution" is improper, but in the presence of
-      \code{\link[ergm:valued-ergm-terms]{sum}}, a geometric
+      \code{\link[ergm:ergm-terms]{sum}}, a geometric
       distribution is induced. Using \code{\link{CMP}} (in addition to
-      \code{\link[ergm:valued-ergm-terms]{sum}}) induces a
+      \code{\link[ergm:ergm-terms]{sum}}) induces a
       Conway-Maxwell-Poisson distribution that is geometric when its
       coefficient is \eqn{0} and Poisson when its coefficient is
       \eqn{1}.  }
@@ -78,7 +78,7 @@
       Specifies each dyad's baseline distribution to be binomial with
       \code{trials} trials and success probability of \eqn{0.5}:
       \eqn{h(y)=\prod_{i,j}\choose{trials}{y_{i,j}}}.  Using
-      \code{\link[ergm:valued-ergm-terms]{valued ERGM terms}} that are
+      \code{\link[ergm:ergm-terms]{valued ERGM terms}} that are
       ``generalized'' from their binary counterparts, with form
       \code{"sum"} (see previous link for the list) produces logistic
       regression.  }
