@@ -11,30 +11,14 @@
  Default MH algorithm for Poisson-reference ERGM
 *********************/
 void MH_Poisson(WtMHproposal *MHp, WtNetwork *nwp)  {  
-  Vertex tail, head;
   double oldwt;
   
   if(MHp->ntoggles == 0) { // Initialize Poisson 
     MHp->ntoggles=1;
     return;
   }
-  
-  if(nwp->bipartite){
-      Mtail[0] = 1 + unif_rand() * nwp->bipartite;
-      Mhead[0] = 1 + nwp->bipartite + unif_rand() * (nwp->nnodes - nwp->bipartite);
-  }else{
-    tail = 1 + unif_rand() * nwp->nnodes;
-    head = 1 + unif_rand() * (nwp->nnodes-1);
-    if(head>=tail) head++;
 
-    if (!nwp->directed_flag && tail > head) {
-      Mtail[0] = head;
-      Mhead[0] = tail;
-    }else{
-      Mtail[0] = tail;
-      Mhead[0] = head;
-    }
-  }
+  GetRandDyad(Mtail, Mhead, nwp);
   
   oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
@@ -54,7 +38,6 @@ void MH_Poisson(WtMHproposal *MHp, WtNetwork *nwp)  {
  Ocassionally proposes jumps to 0.
 *********************/
 void MH_ZIPoisson(WtMHproposal *MHp, WtNetwork *nwp)  {  
-  Vertex tail, head;
   double oldwt, p0=MHp->inputs[0];
   
   if(MHp->ntoggles == 0) { // Initialize Poisson 
@@ -62,23 +45,8 @@ void MH_ZIPoisson(WtMHproposal *MHp, WtNetwork *nwp)  {
     return;
   }
   
-  if(nwp->bipartite){
-      Mtail[0] = 1 + unif_rand() * nwp->bipartite;
-      Mhead[0] = 1 + nwp->bipartite + unif_rand() * (nwp->nnodes - nwp->bipartite);
-  }else{
-    tail = 1 + unif_rand() * nwp->nnodes;
-    head = 1 + unif_rand() * (nwp->nnodes-1);
-    if(head>=tail) head++;
+  GetRandDyad(Mtail, Mhead, nwp);
 
-    if (!nwp->directed_flag && tail > head) {
-      Mtail[0] = head;
-      Mhead[0] = tail;
-    }else{
-      Mtail[0] = tail;
-      Mhead[0] = head;
-    }
-  }
-  
   oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
   const double fudge = 0.5; // Mostly comes in when proposing from 0.
@@ -145,7 +113,6 @@ void MH_PoissonNonObserved(WtMHproposal *MHp, WtNetwork *nwp)  {
  Default MH algorithm for binomial-reference ERGM
 *********************/
 void MH_Binomial(WtMHproposal *MHp, WtNetwork *nwp)  {  
-  Vertex tail, head;
   double oldwt;
   static unsigned int trials;
   
@@ -155,22 +122,7 @@ void MH_Binomial(WtMHproposal *MHp, WtNetwork *nwp)  {
     return;
   }
   
-  if(nwp->bipartite){
-      Mtail[0] = 1 + unif_rand() * nwp->bipartite;
-      Mhead[0] = 1 + nwp->bipartite + unif_rand() * (nwp->nnodes - nwp->bipartite);
-  }else{
-    tail = 1 + unif_rand() * nwp->nnodes;
-    head = 1 + unif_rand() * (nwp->nnodes-1);
-    if(head>=tail) head++;
-
-    if (!nwp->directed_flag && tail > head) {
-      Mtail[0] = head;
-      Mhead[0] = tail;
-    }else{
-      Mtail[0] = tail;
-      Mhead[0] = head;
-    }
-  }
+  GetRandDyad(Mtail, Mhead, nwp);
   
   oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
@@ -249,7 +201,6 @@ void MH_BinomialNonObserved(WtMHproposal *MHp, WtNetwork *nwp)  {
  Default MH algorithm for geometric-reference ERGM
 *********************/
 void MH_Geometric(WtMHproposal *MHp, WtNetwork *nwp)  {  
-  Vertex tail, head;
   double oldwt;
   
   if(MHp->ntoggles == 0) { // Initialize Geometric 
@@ -257,22 +208,7 @@ void MH_Geometric(WtMHproposal *MHp, WtNetwork *nwp)  {
     return;
   }
   
-  if(nwp->bipartite){
-      Mtail[0] = 1 + unif_rand() * nwp->bipartite;
-      Mhead[0] = 1 + nwp->bipartite + unif_rand() * (nwp->nnodes - nwp->bipartite);
-  }else{
-    tail = 1 + unif_rand() * nwp->nnodes;
-    head = 1 + unif_rand() * (nwp->nnodes-1);
-    if(head>=tail) head++;
-
-    if (!nwp->directed_flag && tail > head) {
-      Mtail[0] = head;
-      Mhead[0] = tail;
-    }else{
-      Mtail[0] = tail;
-      Mhead[0] = head;
-    }
-  }
+  GetRandDyad(Mtail, Mhead, nwp);
   
   oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
@@ -343,7 +279,6 @@ void MH_GeometricNonObserved(WtMHproposal *MHp, WtNetwork *nwp)  {
  Default MH algorithm for binomial-reference ERGM
 *********************/
 void MH_DiscUnif(WtMHproposal *MHp, WtNetwork *nwp)  {  
-  Vertex tail, head;
   double oldwt;
   static int a, b;
   
@@ -354,22 +289,7 @@ void MH_DiscUnif(WtMHproposal *MHp, WtNetwork *nwp)  {
     return;
   }
   
-  if(nwp->bipartite){
-      Mtail[0] = 1 + unif_rand() * nwp->bipartite;
-      Mhead[0] = 1 + nwp->bipartite + unif_rand() * (nwp->nnodes - nwp->bipartite);
-  }else{
-    tail = 1 + unif_rand() * nwp->nnodes;
-    head = 1 + unif_rand() * (nwp->nnodes-1);
-    if(head>=tail) head++;
-
-    if (!nwp->directed_flag && tail > head) {
-      Mtail[0] = head;
-      Mhead[0] = tail;
-    }else{
-      Mtail[0] = tail;
-      Mhead[0] = head;
-    }
-  }
+  GetRandDyad(Mtail, Mhead, nwp);
   
   oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
