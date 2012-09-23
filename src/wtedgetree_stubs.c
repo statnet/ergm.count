@@ -115,6 +115,16 @@ static int (*fun)(Vertex *,Vertex *,double *,WtNetwork *) = NULL;
 if(fun==NULL) fun = (int (*)(Vertex *,Vertex *,double *,WtNetwork *)) R_FindSymbol("WtGetRandEdge", "ergm", NULL);
 return fun(tail,head,weight,nwp);
 }
+int WtFindithNonedge(Vertex *tail, Vertex *head, Edge i, WtNetwork *nwp){
+static int (*fun)(Vertex *,Vertex *,Edge,WtNetwork *) = NULL;
+if(fun==NULL) fun = (int (*)(Vertex *,Vertex *,Edge,WtNetwork *)) R_FindSymbol("WtFindithNonedge", "ergm", NULL);
+return fun(tail,head,i,nwp);
+}
+int WtGetRandNonedge(Vertex *tail, Vertex *head, WtNetwork *nwp){
+static int (*fun)(Vertex *,Vertex *,WtNetwork *) = NULL;
+if(fun==NULL) fun = (int (*)(Vertex *,Vertex *,WtNetwork *)) R_FindSymbol("WtGetRandNonedge", "ergm", NULL);
+return fun(tail,head,nwp);
+}
 void Wtprintedge(Edge e, WtTreeNode *edges){
 static void (*fun)(Edge,WtTreeNode *) = NULL;
 if(fun==NULL) fun = (void (*)(Edge,WtTreeNode *)) R_FindSymbol("Wtprintedge", "ergm", NULL);
