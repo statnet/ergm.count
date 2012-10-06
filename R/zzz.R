@@ -26,4 +26,7 @@
 
 .RegisterInitMethods <- function(){
   ergm.init.methods("Poisson", c("zeros"))
+  ergm.init.methods("Binomial", c("zeros"))
+  ergm.init.methods("Geometric", c("zeros"))
+  ergm.init.methods("DiscUnif", c("zeros"))
 }
