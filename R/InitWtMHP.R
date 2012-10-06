@@ -1,5 +1,5 @@
 InitWtMHP.Poisson <- function(arguments, nw, response) {
-  MHproposal <- list(name = "Poisson", inputs=NULL, package="ergm.count")
+  MHproposal <- list(name = "Poisson", inputs=NULL)
   MHproposal
 }
 
@@ -11,41 +11,41 @@ InitWtMHP.ZIPoisson <- function(arguments, nw, response) {
   }else if(!is.numeric(arguments$p0) || length(arguments$p0)!=1 || arguments$p0<0 || arguments$p0 >=1) {
     stop(paste("Invalid jump-to-0 argument to the Zero-Inflated Poisson proposal: must be either omited or a single number in the interval [0,1)."))
   }
-  MHproposal <- list(name = "ZIPoisson", inputs=as.double(arguments$p0), package="ergm.count")
+  MHproposal <- list(name = "ZIPoisson", inputs=as.double(arguments$p0))
   MHproposal
 }
 
 InitWtMHP.PoissonNonObserved <- function(arguments, nw, response) {
-  MHproposal <- list(name = "PoissonNonObserved", inputs=ergm.Cprepare.miss(nw), package="ergm.count")
+  MHproposal <- list(name = "PoissonNonObserved", inputs=ergm.Cprepare.miss(nw))
   MHproposal
 }
 
 InitWtMHP.Binomial <- function(arguments, nw, response) {
-  MHproposal <- list(name = "Binomial", inputs=arguments$reference$trials, package="ergm.count")
+  MHproposal <- list(name = "Binomial", inputs=arguments$reference$trials)
   MHproposal
 }
 
 InitWtMHP.BinomialNonObserved <- function(arguments, nw, response) {
-  MHproposal <- list(name = "BinomialNonObserved", inputs=c(arguments$reference$trials,ergm.Cprepare.miss(nw)), package="ergm.count")
+  MHproposal <- list(name = "BinomialNonObserved", inputs=c(arguments$reference$trials,ergm.Cprepare.miss(nw)))
   MHproposal
 }
 
 InitWtMHP.Geometric <- function(arguments, nw, response) {
-  MHproposal <- list(name = "Geometric", inputs=NULL, package="ergm.count")
+  MHproposal <- list(name = "Geometric", inputs=NULL)
   MHproposal
 }
 
 InitWtMHP.GeometricNonObserved <- function(arguments, nw, response) {
-  MHproposal <- list(name = "GeometricNonObserved", inputs=ergm.Cprepare.miss(nw), package="ergm.count")
+  MHproposal <- list(name = "GeometricNonObserved", inputs=ergm.Cprepare.miss(nw))
   MHproposal
 }
 
 InitWtMHP.DiscUnif <- function(arguments, nw, response) {
-  MHproposal <- list(name = "DiscUnif", inputs=c(arguments$reference$a,arguments$reference$b), package="ergm.count")
+  MHproposal <- list(name = "DiscUnif", inputs=c(arguments$reference$a,arguments$reference$b))
   MHproposal
 }
 
 InitWtMHP.DiscUnifNonObserved <- function(arguments, nw, response) {
-  MHproposal <- list(name = "DiscUnifNonObserved", inputs=c(arguments$reference$a,arguments$reference$b,ergm.Cprepare.miss(nw)), package="ergm.count")
+  MHproposal <- list(name = "DiscUnifNonObserved", inputs=c(arguments$reference$a,arguments$reference$b,ergm.Cprepare.miss(nw)))
   MHproposal
 }
