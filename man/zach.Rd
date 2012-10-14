@@ -21,9 +21,9 @@ and how strongly and reports, for each pair of actors, the count of social
 contexts in which they interacted. The 8 contexts recorded were
 \itemize{
   \item academic classes at the university;
-  \item Hi’s private karate studio in his night classes;
-  \item Hi’s private karate studio where he taught on weekends;
-  \item student-teaching at Hi’s studio;
+  \item Hi's private karate studio in his night classes;
+  \item Hi's private karate studio where he taught on weekends;
+  \item student-teaching at Hi's studio;
   \item the university rathskeller (bar) located near the karate club;
   \item a bar located near the university campus;
   \item open karate tournaments in the area; and

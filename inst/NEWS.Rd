@@ -14,10 +14,12 @@
     }
   }
   
-  % \subsection{NEW FEATURES}{
-  %   \itemize{
-  %   } 
-  % }
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item A number of reference measures for count data have been
+      implemented. See \code{? 'ergm.count-package'} and \code{? 'ergm-references'} for help.
+    } 
+  }
   
   % \subsection{OTHER USER-VISIBLE CHANGES}{
   %   \itemize{

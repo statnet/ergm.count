@@ -31,7 +31,7 @@ model networks whose dyad values are counts. Examples include counts of
 conversations, messages, and other interactions.
 
 In particular, this package implements the Poisson, geometric, binomial,
-and discrete uniform reference measures (documented in \link{References}) for
+and discrete uniform reference measures (documented in \code{\link{ergm-references}}) for
 use by \code{\link{ergm}} and \code{\link{simulate.ergm}} to fit models
 from this family, as well as statistics specific to modeling counts,
 such as the \code{\link{CMP}} for the Conway-Maxwell-Poisson Distribution.
@@ -42,7 +42,7 @@ go to the Statnet project website:
 A tutorial, support newsgroup, references and links to further resources are provided there.
 }
 
-\seealso{\code{\link{ergm-terms}, \code{\link{ergm-references}}}}
+\seealso{\code{\link{ergm-terms}}, \code{\link{ergm-references}}}
 
 \author{
 Pavel N. Krivitsky \email{krivitsky@stat.psu.edu}

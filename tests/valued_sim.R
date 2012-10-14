@@ -1,5 +1,5 @@
 library(ergm.count)
-
+opttest({
 load("testnet3d.RData")
 
 ## Poisson-reference
@@ -60,3 +60,4 @@ cat("==== statsonly=FALSE\n")
 s.full<-simulate(testnet3d~sum, nsim=1000, reference=~DiscUnif(-1,5), response="w", coef=0, statsonly=FALSE)
 test <- approx.hotelling.diff.test(sapply(s.full, function(x) sum(as.matrix(x,m="a",a="w"))/6,simplify=TRUE),mu0=2)
 if(test$p.value<.01) {print(test); stop("Simulation test failed.")}
+})
