@@ -1,5 +1,5 @@
 .onAttach <- function(lib, pkg){
-  sm <- statnetStartupMessage("ergm.count", FALSE, FALSE)
+  sm <- statnetStartupMessage("ergm.count",c("statnet"),FALSE)
   if(!is.null(sm)) packageStartupMessage(sm)
 
   .RegisterMHPs()
