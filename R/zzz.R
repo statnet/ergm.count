@@ -1,5 +1,6 @@
 .onAttach <- function(lib, pkg){
-  packageStartupMessage(mkStartupMessage("ergm.count"))
+  sm <- statnetStartupMessage("ergm.count", FALSE, FALSE)
+  if(!is.null(sm)) packageStartupMessage(sm)
 
   .RegisterMHPs()
   .RegisterConstraintImplications()
