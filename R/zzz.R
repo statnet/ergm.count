@@ -17,9 +17,6 @@
 
   ergm.MHP.table("c", "Binomial", "",  0, "random", "Binomial")
   ergm.MHP.table("c", "Binomial", "observed",  0, "random", "BinomialNonObserved")
-
-  ergm.MHP.table("c", "DiscUnif", "",  0, "random", "DiscUnif")
-  ergm.MHP.table("c", "DiscUnif", "observed",  0, "random", "DiscUnifNonObserved") 
 }
 
 .RegisterConstraintImplications <- function(){

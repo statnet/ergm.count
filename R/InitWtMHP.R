@@ -39,13 +39,3 @@ InitWtMHP.GeometricNonObserved <- function(arguments, nw, response) {
   MHproposal <- list(name = "GeometricNonObserved", inputs=ergm.Cprepare.miss(nw))
   MHproposal
 }
-
-InitWtMHP.DiscUnif <- function(arguments, nw, response) {
-  MHproposal <- list(name = "DiscUnif", inputs=c(arguments$reference$a,arguments$reference$b))
-  MHproposal
-}
-
-InitWtMHP.DiscUnifNonObserved <- function(arguments, nw, response) {
-  MHproposal <- list(name = "DiscUnifNonObserved", inputs=c(arguments$reference$a,arguments$reference$b,ergm.Cprepare.miss(nw)))
-  MHproposal
-}

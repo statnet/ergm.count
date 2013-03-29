@@ -5,11 +5,9 @@
 \alias{references.ergm}
 \alias{Poisson}
 \alias{Binomial}
-\alias{DiscUnif}
 \alias{Geometric}
 \alias{InitReference.Poisson}
 \alias{InitReference.Binomial}
-\alias{InitReference.DiscUnif}
 \alias{InitReference.Geometric}
 \alias{InitWtMHP.Poisson}
 \alias{InitWtMHP.ZIPoisson}
@@ -18,8 +16,6 @@
 \alias{InitWtMHP.BinomialNonObserved}
 \alias{InitWtMHP.Geometric}
 \alias{InitWtMHP.GeometricNonObserved}
-\alias{InitWtMHP.DiscUnif}
-\alias{InitWtMHP.DiscUnifNonObserved}
 
 \docType{methods}
 
@@ -28,7 +24,7 @@
 
 \description{
   This page describes the possible reference measures (baseline distributions)
-  for modeling count data.
+  for modeling count data found in the \code{\link[=ergm.count-package]{ergm.count}} package.
 
   Each of these is specified on the RHS of a one-sided formula passed as
   the \code{reference} argument to \code{\link[ergm]{ergm}}. 
@@ -123,12 +119,6 @@
       ``generalized'' from their binary counterparts, with form
       \code{"sum"} (see previous link for the list) produces logistic
       regression.  }
-
-    \item{\code{DiscUnif(a,b)}}{\emph{Discrete-Uniform-reference ERGM:}
-      Specifies each dyad's baseline distribution to be discrete uniform
-      between \code{a} and \code{b} (both inclusive): \eqn{h(y)=1}, with
-      the support being
-      \eqn{\code{a},\code{a}+1,\ldots,\code{b}-1,\code{b}}.  }
 
     }
 }

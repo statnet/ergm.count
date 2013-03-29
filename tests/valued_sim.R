@@ -48,16 +48,4 @@ cat("==== statsonly=FALSE\n")
 s.full<-simulate(testnet3d~sum, nsim=1000, reference=~Binomial(5), response="w", coef=log(.4/.6), statsonly=FALSE)
 test <- approx.hotelling.diff.test(sapply(s.full, function(x) sum(as.matrix(x,m="a",a="w"))/6,simplify=TRUE),mu0=2)
 if(test$p.value<.01) {print(test); stop("Simulation test failed.")}
-
-## DiscUnif-reference
-cat("======== Discrete-uniform-reference ERGM with minimum of -1 and maxium of 5 for a mean 2\n")
-cat("==== statsonly=TRUE\n")
-s <- simulate(testnet3d~sum, nsim=1000, reference=~DiscUnif(-1,5), response="w", coef=0, statsonly=TRUE)
-test <- approx.hotelling.diff.test(s/6,mu0=2)
-if(test$p.value<.01) {print(test); stop("Simulation test failed.")}
-
-cat("==== statsonly=FALSE\n")
-s.full<-simulate(testnet3d~sum, nsim=1000, reference=~DiscUnif(-1,5), response="w", coef=0, statsonly=FALSE)
-test <- approx.hotelling.diff.test(sapply(s.full, function(x) sum(as.matrix(x,m="a",a="w"))/6,simplify=TRUE),mu0=2)
-if(test$p.value<.01) {print(test); stop("Simulation test failed.")}
 })
