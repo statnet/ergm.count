@@ -64,6 +64,7 @@ are provided:
 }
 
 \examples{
+\donttest{
 data(zach)
 
 # Fit a binomial-reference ERGM.
@@ -85,6 +86,7 @@ zach.fit2 <- ergm(zach~nonzero+sum+nodefactor("role",base=2)+transitiveties,
 mcmc.diagnostics(zach.fit2)
 
 summary(zach.fit2)
+}
 }
 }
 \keyword{datasets}
