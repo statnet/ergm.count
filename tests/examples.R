@@ -7,9 +7,10 @@
 #
 #  Copyright 2003-2013 Statnet Commons
 #######################################################################
-library(ergm.count)
+library(statnet.common)
 opttest({
 rm(list=ls())
+library(ergm.count)
 {
 data(zach)
 
