@@ -7,7 +7,7 @@ Authors@R: c(
 	   person("Mark S.", "Handcock", role=c("ctb"), email="handcock@stat.ucla.edu"),
            person("David R.", "Hunter", role=c("ctb"), email="dhunter@stat.psu.edu"))
 LinkingTo: ergm
-Depends: ergm (>= 3.2), network
+Depends: statnet.common (>= 3.1), ergm (>= 3.2), network
 Enhances: ergm
 Description: A set of extensions for the ergm package to fit weighted networks whose edge weights are counts.
 License: GPL-3 + file LICENSE
