@@ -1,6 +1,7 @@
-library(ergm.count)
+library(statnet.common)
 opttest({
 rm(list=ls())
+library(ergm.count)
 {
 data(zach)
 
