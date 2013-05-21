@@ -14,7 +14,9 @@ InitWtMHP.Poisson <- function(arguments, nw, response) {
 
 InitWtMHP.ZIPoisson <- function(arguments, nw, response) {
   if(! "p0" %in% names(arguments)){
-    arguments$p0 <- max(sum(nw %e% response > 0)/network.dyadcount(nw) - exp(-sum(nw %e% response)/network.dyadcount(nw)),0)
+    arguments$p0 <- max((1-sum(nw %e% response > 0)/network.dyadcount(nw)) -
+                        exp(-sum(nw %e% response)/network.dyadcount(nw)),
+                        0)
     if(arguments$p0==0) warning("The data do not appear to zero-inflated and are likely to be zero-deflated.")
     cat("Using adaptive jump-to-0 probability of ",arguments$p0,".\n")
   }else if(!is.numeric(arguments$p0) || length(arguments$p0)!=1 || arguments$p0<0 || arguments$p0 >=1) {
