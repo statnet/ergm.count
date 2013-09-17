@@ -23,7 +23,7 @@
 }
 
 .RegisterInitMethods <- function(){
-  ergm.init.methods("Poisson", c("zeros"))
-  ergm.init.methods("Binomial", c("zeros"))
-  ergm.init.methods("Geometric", c("zeros"))
+  ergm.init.methods("Poisson", c("CD","zeros"))
+  ergm.init.methods("Binomial", c("CD","zeros"))
+  ergm.init.methods("Geometric", c("CD","zeros"))
 }
