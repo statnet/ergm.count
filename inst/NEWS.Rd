@@ -13,27 +13,18 @@
 
 % When a release is forked, copy the sections to a new release and
 % delete unused sections.
-\section{Changes in version 3.1}{
+\section{Changes in version 3.1.1}{
 
-  \subsection{THIS IS AN INITIAL RELEASE}{
+  % \subsection{NEW FEATURES}{
+  %   \itemize{
+  %   } 
+  % }
+  
+  \subsection{OTHER USER-VISIBLE CHANGES}{
     \itemize{
-      \item Although this is an initial release, it is depends very heavily on
-      the \code{\link[=ergm-package]{ergm}} package version 3.1, and it is
-      thus numbered 3.1.
+      \item E-mail address and affiliation of the maintainer have been updated.
     }
   }
-  
-  \subsection{NEW FEATURES}{
-    \itemize{
-      \item A number of reference measures for count data have been
-      implemented. See \code{? 'ergm.count-package'} and \code{? 'ergm-references'} for help.
-    } 
-  }
-  
-  % \subsection{OTHER USER-VISIBLE CHANGES}{
-  %   \itemize{
-  %   }
-  % }
 
   % \subsection{C-LEVEL FACILITIES}{
   %   \itemize{
@@ -68,4 +59,23 @@
   %   \itemize{
   %   }
   % }
+}
+
+
+\section{Changes in version 3.1}{
+
+  \subsection{THIS IS AN INITIAL RELEASE}{
+    \itemize{
+      \item Although this is an initial release, it is depends very heavily on
+      the \code{\link[=ergm-package]{ergm}} package version 3.1, and it is
+      thus numbered 3.1.
+    }
+  }
+  
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item A number of reference measures for count data have been
+      implemented. See \code{? 'ergm.count-package'} and \code{? 'ergm-references'} for help.
+    } 
+  }
 }
