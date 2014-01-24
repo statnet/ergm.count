@@ -4,7 +4,7 @@ InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
                       vartypes = NULL,
                       defaultvalues = list(),
                       required = NULL)
-  list(name="nsumlogfactorial",
+  list(name="sumlogfactorial",
        coef.names="CMP",
        inputs=NULL,
        dependence=FALSE,
