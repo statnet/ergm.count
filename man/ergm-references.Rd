@@ -11,6 +11,7 @@
 \alias{InitReference.Geometric}
 \alias{InitWtMHP.Poisson}
 \alias{InitWtMHP.ZIPoisson}
+\alias{InitWtMHP.PoissonTNT}
 \alias{InitWtMHP.PoissonNonObserved}
 \alias{InitWtMHP.Binomial}
 \alias{InitWtMHP.BinomialNonObserved}
@@ -89,16 +90,37 @@
       regression. Using \code{\link{CMP}} induces a
       Conway-Maxwell-Poisson distribution that is Poisson when its
       coefficient is \eqn{0} and geometric when its coefficient is
-      \eqn{-1}.
+      \eqn{1}.
 
-      A 0-inflated version of this proposal is also implemented. It can
-      be invoked by specifying a \code{\link[ergm]{control.ergm}} (or
-      \code{\link[ergm]{control.simulate.formula}}, etc.)  parameter
-      \code{MCMC.prop.weights="0inflated"}. An optional proposal
-      argument \code{p0} (i.e., \code{MCMC.prop.args=list(p0=...)}) can
-      be passed as well, specifying the probability of a jump to 0. (If
-      not given, defaults to the "surplus" of 0s in the observed
-      network, relative to Poisson.)  }
+      Three proposal functions are currently implemented, two of them
+      designed to improve mixing for sparse networks. They can can be
+      selected via the \code{MCMC.prop.weights=} control parameter. The
+      sparse proposals work by proposing a jump to 0. Both of them take
+      an optional proposal argument \code{p0} (i.e.,
+      \code{MCMC.prop.args=list(p0=...)})  specifying the probability of
+      such a jump. However, the way in which they implement it are
+      different:
+
+      \describe{
+	\item{\code{"random"}}{ Select a dyad \eqn{(i,j)}at random, and draw the
+          proposal \eqn{y_{i,j}^\star \sim \mathrm{Poisson}_{\ne
+              y_{i,j}}(y_{i,j}+0.5)} (a Poisson distribution with mean
+          slightly higher than the current value and conditional on not
+          proposing the current value).}
+	
+        \item{\code{"0inflated"}}{As \code{"random"} but, with
+          probability \code{p0}, propose a jump to 0 instead of a
+          Poisson jump (if not already at 0). If \code{p0} is not given,
+          defaults to the "surplus" of 0s in the observed network,
+          relative to Poisson. }
+	
+	\item{\code{"TNT"} (the default)}{As \code{"0inflated"} but
+          instead of selecting a dyad at random, select a tie with
+          probability \code{p0}, and a random dyad otherwise, as with
+          the binary TNT. Currently, \code{p0} defaults to 0.2.}
+
+      }
+    }
 
     \item{\code{Geometric}}{\emph{Geometric-reference ERGM:} Specifies
       each dyad's baseline distribution to be uniform on the natural
@@ -109,7 +131,7 @@
       \code{\link[ergm:ergm-terms]{sum}}) induces a
       Conway-Maxwell-Poisson distribution that is geometric when its
       coefficient is \eqn{0} and Poisson when its coefficient is
-      \eqn{1}.  }
+      \eqn{-1}.  }
 
     \item{\code{Binomial(trials)}}{\emph{Binomial-reference ERGM:}
       Specifies each dyad's baseline distribution to be binomial with

@@ -3,6 +3,16 @@ InitWtMHP.Poisson <- function(arguments, nw, response) {
   MHproposal
 }
 
+InitWtMHP.PoissonTNT <- function(arguments, nw, response) {
+  if(! "p0" %in% names(arguments)){
+    arguments$p0 <- 0.2 
+  }else if(!is.numeric(arguments$p0) || length(arguments$p0)!=1 || arguments$p0<0 || arguments$p0 >=1) {
+    stop(paste("Invalid jump-to-0 argument to the TNT Poisson proposal: must be either omited or a single number in the interval [0,1)."))
+  }
+  MHproposal <- list(name = "PoissonTNT", inputs=as.double(arguments$p0))
+  MHproposal
+}
+
 InitWtMHP.ZIPoisson <- function(arguments, nw, response) {
   if(! "p0" %in% names(arguments)){
     arguments$p0 <- max((1-sum(nw %e% response > 0)/network.dyadcount(nw)) -

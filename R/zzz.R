@@ -9,6 +9,7 @@
 
 .RegisterMHPs <- function(){
   ergm.MHP.table("c", "Poisson", "",  0, "random", "Poisson")
+  ergm.MHP.table("c", "Poisson", "",  1, "TNT", "PoissonTNT")
   ergm.MHP.table("c", "Poisson", "",  0, "0inflated", "ZIPoisson")
   ergm.MHP.table("c", "Poisson", "observed",  0, "random", "PoissonNonObserved")
 
