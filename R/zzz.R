@@ -1,6 +1,9 @@
 .onAttach <- function(lib, pkg){
   sm <- statnetStartupMessage("ergm.count",c("statnet"),FALSE)
-  if(!is.null(sm)) packageStartupMessage(sm)
+  if(!is.null(sm)){
+    packageStartupMessage(sm)
+    packageStartupMessage(paste(c(strwrap(paste("NOTE: The form of the term ",sQuote("CMP")," has been changed in version 3.2 of ",sQuote("ergm.count"),". See the news or help('CMP') for more information.",sep="")),""),collapse="\n"))
+  }
 
   .RegisterMHPs()
   .RegisterConstraintImplications()

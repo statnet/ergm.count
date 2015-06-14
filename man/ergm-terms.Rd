@@ -30,7 +30,8 @@
       ERGM, allowing it to represent a broad range of disperson
       values. In particular, combined with a Poisson-reference ERGM, a
       negative coefficient on this term induces underdispersion and a
-      positive coefficient induces overdispersion.
+      positive coefficient induces overdispersion. (This behavior is
+      different from 3.1.1, when the negation of this value was used.)
 
       Note that its current implementation may not perform well if the
       data are overdispersed relative to geometric.
