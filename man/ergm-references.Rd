@@ -136,7 +136,7 @@
     \item{\code{Binomial(trials)}}{\emph{Binomial-reference ERGM:}
       Specifies each dyad's baseline distribution to be binomial with
       \code{trials} trials and success probability of \eqn{0.5}:
-      \eqn{h(y)=\prod_{i,j}\choose{trials}{y_{i,j}}}.  Using
+      \eqn{h(y)=\prod_{i,j}{{\code{trials}}\choose{y_{i,j}}}}.  Using
       \code{\link[ergm:ergm-terms]{valued ERGM terms}} that are
       ``generalized'' from their binary counterparts, with form
       \code{"sum"} (see previous link for the list) produces logistic
