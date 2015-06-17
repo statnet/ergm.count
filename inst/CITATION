@@ -38,6 +38,7 @@ statnet.cite.pkg <- function(pkg){
 }
 # ---- END STATNET CITATION FUNCTIONS ----'
 statnet.cite.head("ergm.count")
-statnet.cite.pkg("ergm")
+# FIXME: Figure out a way to cite ergm as well.
+# statnet.cite.pkg("ergm")
 statnet.cite.pkg("ergm.count")
 statnet.cite.foot("ergm.count")
