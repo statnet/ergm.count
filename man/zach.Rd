@@ -64,6 +64,7 @@ are provided:
 }
 
 \examples{
+\donttest{
 data(zach)
 
 # Fit a binomial-reference ERGM.
@@ -76,7 +77,6 @@ mcmc.diagnostics(zach.fit1)
 
 summary(zach.fit1)
 
-\donttest{
 # This is much slower.
 zach.fit2 <- ergm(zach~nonzero+sum+nodefactor("role",base=2)+transitiveties,
                   response="contexts", reference=~Binomial(8),
