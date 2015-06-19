@@ -64,9 +64,14 @@ are provided:
 }
 
 \examples{
-\donttest{
 data(zach)
 
+oldpal <- palette()
+palette(gray((1:8)/8))
+plot(zach, vertex.col="role", displaylabels=TRUE, edge.col="contexts")
+palette(oldpal)
+
+\donttest{
 # Fit a binomial-reference ERGM.
 
 zach.fit1 <- ergm(zach~nonzero+sum+nodefactor("role",base=2)+absdiffcat("faction.id"),
@@ -76,7 +81,8 @@ zach.fit1 <- ergm(zach~nonzero+sum+nodefactor("role",base=2)+absdiffcat("faction
 mcmc.diagnostics(zach.fit1)
 
 summary(zach.fit1)
-
+}
+\dontrun{
 # This is much slower.
 zach.fit2 <- ergm(zach~nonzero+sum+nodefactor("role",base=2)+transitiveties,
                   response="contexts", reference=~Binomial(8),
