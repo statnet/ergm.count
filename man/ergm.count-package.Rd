@@ -45,7 +45,7 @@ A tutorial, support newsgroup, references and links to further resources are pro
 \seealso{\code{\link{ergm-terms}}, \code{\link{ergm-references}}}
 
 \author{
-Pavel N. Krivitsky \email{krivitsky@stat.psu.edu}
+Pavel N. Krivitsky \email{pavel@uow.edu.au}
 }
 \references{
 Handcock MS, Hunter DR, Butts CT, Goodreau SG, Krivitsky PN and Morris M
