@@ -4,7 +4,9 @@
     packageStartupMessage(sm)
     packageStartupMessage(paste(c(strwrap(paste("NOTE: The form of the term ",sQuote("CMP")," has been changed in version 3.2 of ",sQuote("ergm.count"),". See the news or help('CMP') for more information.",sep="")),""),collapse="\n"))
   }
-
+}
+  
+.onLoad <- function(lib, pkg){    
   .RegisterMHPs()
   .RegisterConstraintImplications()
   .RegisterInitMethods()
