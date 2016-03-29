@@ -1,5 +1,5 @@
 Package: ergm.count
-Version: 3.2-13887.1-2015.06.19-21.08.11
+Version: 3.3-13887.1-2015.06.19-21.08.11
 Date: 2015-06-19
 Title:  Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count Edges
 Authors@R: c(

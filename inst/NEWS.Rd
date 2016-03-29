@@ -4,28 +4,18 @@
 
 % When a release is forked, copy the sections to a new release and
 % delete unused sections.
-\section{Changes in version 3.2}{
+
+\section{Changes in version 3.2.1}{
   
-  \subsection{NEW FEATURES}{
-    \itemize{
-      \item \code{ergm.count} now makes use of contrastive divergence in
-      \code{\link[=ergm:ergm-package]{ergm}} to obtain starting values for
-      the MCMLE.
-      
-      \item Poisson-reference ERGMs now have TNT-style proposal,
-      optimized for sparse networks.
-    } 
-  }
+  %% \subsection{NEW FEATURES}{
+  %%   \itemize{
+  %%   } 
+  %% }
   
-  \subsection{OTHER USER-VISIBLE CHANGES}{
-    \itemize{
-      \item The \code{\link{CMP}} term now adds, rather than subtracts
-      \eqn{\sum_{(i,j)}\log(y_{i,j}!)}, whereas 3.1.1 and prior versions
-      did the opposite. This means that higher
-      \eqn{\theta_{\text{CMP}}} represents overdispersion and lower
-      \eqn{\theta_{\text{CMP}}} represents underdispersion.
-    }
-  }
+  %% \subsection{OTHER USER-VISIBLE CHANGES}{
+  %%   \itemize{
+  %%   }
+  %% }
 
   % \subsection{C-LEVEL FACILITIES}{
   %   \itemize{
@@ -56,10 +46,38 @@
   %   }
   % }
 
-  % \subsection{BUG FIXES}{
-  %   \itemize{
-  %   }
-  % }
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item Package now works when loaded but not attached.
+      \item Test that was failing with \code{\link[ergm-package]{ergm}}
+      3.6.0 has been fixed.
+    }
+  }
+}
+
+
+\section{Changes in version 3.2}{
+  
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item \code{ergm.count} now makes use of contrastive divergence in
+      \code{\link[=ergm:ergm-package]{ergm}} to obtain starting values for
+      the MCMLE.
+      
+      \item Poisson-reference ERGMs now have TNT-style proposal,
+      optimized for sparse networks.
+    } 
+  }
+  
+  \subsection{OTHER USER-VISIBLE CHANGES}{
+    \itemize{
+      \item The \code{\link{CMP}} term now adds, rather than subtracts
+      \eqn{\sum_{(i,j)}\log(y_{i,j}!)}, whereas 3.1.1 and prior versions
+      did the opposite. This means that higher
+      \eqn{\theta_{\text{CMP}}} represents overdispersion and lower
+      \eqn{\theta_{\text{CMP}}} represents underdispersion.
+    }
+  }
 }
 
 
