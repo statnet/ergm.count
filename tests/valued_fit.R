@@ -1,5 +1,5 @@
 library(ergm.count)
-set.seed(1)
+set.seed(0)
 
 ## Poisson-reference ERGM
 
@@ -12,7 +12,8 @@ y <- as.network(m, matrix.type="a", directed=TRUE, ignore.eval=FALSE, names.eval
 truth <- log(sum(m)/n/(n-1))
 diag(m) <- NA
 
-efit <- ergm(y ~ sum, response="w", reference=~Poisson, verbose=TRUE)
+efit <- ergm(y ~ sum, response="w", reference=~Poisson, verbose=TRUE,
+             control=control.ergm(loglik.control=control.logLik.ergm(nsteps=40)))
 
 summary(efit)
 
