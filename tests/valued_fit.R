@@ -19,4 +19,4 @@ summary(efit)
 true.llk <- sum(dpois(na.omit(c(m)), exp(coef(efit)), log=TRUE)) - sum(dpois(na.omit(c(m)), 1, log=TRUE))
 
 stopifnot(abs(coef(efit)-truth)<0.01)
-stopifnot(abs(true.llk - logLik(efit))<0.1)
+stopifnot(abs(true.llk - logLik(efit))<0.2)

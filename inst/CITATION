@@ -19,7 +19,11 @@ statnet.cite.foot <- function(pkg){
 }
 
 # generates a consistent bibentry citation for the software manual of the package
-statnet.cite.pkg <- function(pkg){
+statnet.cite.pkg <- function(pkg=NULL){
+  if(!is.null(pkg)){
+    meta <- try(utils::packageDescription(pkg))
+    if(inherits(meta,"try-error")) return()
+  }
   # the 'meta' variable is provided by R's CITATION processing script
   projhomepage <- "http://www.statnet.org"
   # compute the list of authors  
@@ -38,7 +42,6 @@ statnet.cite.pkg <- function(pkg){
 }
 # ---- END STATNET CITATION FUNCTIONS ----'
 statnet.cite.head("ergm.count")
-# FIXME: Figure out a way to cite ergm as well.
-# statnet.cite.pkg("ergm")
-statnet.cite.pkg("ergm.count")
+statnet.cite.pkg()
+statnet.cite.pkg("ergm")
 statnet.cite.foot("ergm.count")
