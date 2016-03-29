@@ -1,5 +1,5 @@
 library(ergm.count)
-set.seed(0)
+set.seed(1)
 
 ## Poisson-reference ERGM
 
