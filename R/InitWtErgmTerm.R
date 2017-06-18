@@ -17,5 +17,18 @@ InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
        coef.names="CMP",
        inputs=NULL,
        dependence=FALSE,
-       maxval=0)
+       minval=0)
+}
+
+InitWtErgmTerm.CMB<-function(nw, arglist, response, ...) {
+  a <- check.ErgmTerm(nw, arglist,
+                      varnames = c("trials", "coupled"),
+                      vartypes = c("numeric", "logical"),
+                      defaultvalues = list(NULL, TRUE),
+                      required = c(TRUE, FALSE) )
+  list(name=if(a$coupled) "CMB" else "CMB2",
+       coef.names=if(a$coupled) "CMB" else c("CMB.y","CMB.n-y"),
+       inputs=a$trials,
+       dependence=FALSE,
+       minval=0)
 }

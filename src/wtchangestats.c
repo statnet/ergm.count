@@ -25,10 +25,17 @@
  stat: sumlogfactorial
  Turns a Poisson-reference or geometric-reference ERGM into a Conway-Maxwell-Poisson distribution
 *****************/
-WtD_CHANGESTAT_FN(d_sumlogfactorial){
-  ZERO_ALL_CHANGESTATS();
-  EXEC_THROUGH_TOGGLES({
-      CHANGE_STAT[0] += lgamma1p(NEWWT)-lgamma1p(OLDWT);
-  });
+WtC_CHANGESTAT_FN(c_sumlogfactorial){
+  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(GETWT(tail,head));
 }
 
+WtC_CHANGESTAT_FN(c_CMB){
+  double oldweight = GETWT(tail,head), ntrials = INPUT_PARAM[0];
+  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(oldweight) + lgamma1p(ntrials-weight)-lgamma1p(ntrials-oldweight);
+}
+
+WtC_CHANGESTAT_FN(c_CMB2){
+  double oldweight = GETWT(tail,head), ntrials = INPUT_PARAM[0];
+  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(oldweight);
+  CHANGE_STAT[1] = lgamma1p(ntrials-weight)-lgamma1p(ntrials-oldweight);
+}

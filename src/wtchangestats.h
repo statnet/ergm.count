@@ -19,8 +19,8 @@
 #ifndef WTCHANGESTATS_H
 #define WTCHANGESTATS_H
 
-#include "wtedgetree.h"
-#include "wtchangestat.h"
+#include "ergm_wtedgetree.h"
+#include "ergm_wtchangestat.h"
 
 /********************  changestats:   S    ***********/
 WtD_CHANGESTAT_FN(d_sumlogfactorial);
