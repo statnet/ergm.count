@@ -1,4 +1,4 @@
-#  File R/InitWtMHP.R in package ergm.count, part of the Statnet suite
+#  File R/InitWtErgmProposal.R in package ergm.count, part of the Statnet suite
 #  of packages for network analysis, http://statnet.org .
 #
 #  This software is distributed under the GPL-3 license.  It is free,
@@ -7,22 +7,22 @@
 #
 #  Copyright 2008-2016 Statnet Commons
 #######################################################################
-InitWtMHP.Poisson <- function(arguments, nw, response) {
-  MHproposal <- list(name = "Poisson", inputs=NULL)
-  MHproposal
+InitWtErgmProposal.Poisson <- function(arguments, nw, response) {
+  proposal <- list(name = "Poisson", inputs=NULL)
+  proposal
 }
 
-InitWtMHP.PoissonTNT <- function(arguments, nw, response) {
+InitWtErgmProposal.PoissonTNT <- function(arguments, nw, response) {
   if(! "p0" %in% names(arguments)){
     arguments$p0 <- 0.2 
   }else if(!is.numeric(arguments$p0) || length(arguments$p0)!=1 || arguments$p0<0 || arguments$p0 >=1) {
     stop(paste("Invalid jump-to-0 argument to the TNT Poisson proposal: must be either omited or a single number in the interval [0,1)."))
   }
-  MHproposal <- list(name = "PoissonTNT", inputs=as.double(arguments$p0))
-  MHproposal
+  proposal <- list(name = "PoissonTNT", inputs=as.double(arguments$p0))
+  proposal
 }
 
-InitWtMHP.ZIPoisson <- function(arguments, nw, response) {
+InitWtErgmProposal.ZIPoisson <- function(arguments, nw, response) {
   if(! "p0" %in% names(arguments)){
     arguments$p0 <- max((1-sum(nw %e% response > 0)/network.dyadcount(nw)) -
                         exp(-sum(nw %e% response)/network.dyadcount(nw)),
@@ -32,31 +32,31 @@ InitWtMHP.ZIPoisson <- function(arguments, nw, response) {
   }else if(!is.numeric(arguments$p0) || length(arguments$p0)!=1 || arguments$p0<0 || arguments$p0 >=1) {
     stop(paste("Invalid jump-to-0 argument to the Zero-Inflated Poisson proposal: must be either omited or a single number in the interval [0,1)."))
   }
-  MHproposal <- list(name = "ZIPoisson", inputs=as.double(arguments$p0))
-  MHproposal
+  proposal <- list(name = "ZIPoisson", inputs=as.double(arguments$p0))
+  proposal
 }
 
-InitWtMHP.PoissonNonObserved <- function(arguments, nw, response) {
-  MHproposal <- list(name = "PoissonNonObserved", inputs=ergm.Cprepare.miss(nw))
-  MHproposal
+InitWtErgmProposal.PoissonNonObserved <- function(arguments, nw, response) {
+  proposal <- list(name = "PoissonNonObserved", inputs=to_ergm_Cdouble(is.na(nw)))
+  proposal
 }
 
-InitWtMHP.Binomial <- function(arguments, nw, response) {
-  MHproposal <- list(name = "Binomial", inputs=arguments$reference$trials)
-  MHproposal
+InitWtErgmProposal.Binomial <- function(arguments, nw, response) {
+  proposal <- list(name = "Binomial", inputs=arguments$reference$trials)
+  proposal
 }
 
-InitWtMHP.BinomialNonObserved <- function(arguments, nw, response) {
-  MHproposal <- list(name = "BinomialNonObserved", inputs=c(arguments$reference$trials,ergm.Cprepare.miss(nw)))
-  MHproposal
+InitWtErgmProposal.BinomialNonObserved <- function(arguments, nw, response) {
+  proposal <- list(name = "BinomialNonObserved", inputs=c(arguments$reference$trials,to_ergm_Cdouble(is.na(nw))))
+  proposal
 }
 
-InitWtMHP.Geometric <- function(arguments, nw, response) {
-  MHproposal <- list(name = "Geometric", inputs=NULL)
-  MHproposal
+InitWtErgmProposal.Geometric <- function(arguments, nw, response) {
+  proposal <- list(name = "Geometric", inputs=NULL)
+  proposal
 }
 
-InitWtMHP.GeometricNonObserved <- function(arguments, nw, response) {
-  MHproposal <- list(name = "GeometricNonObserved", inputs=ergm.Cprepare.miss(nw))
-  MHproposal
+InitWtErgmProposal.GeometricNonObserved <- function(arguments, nw, response) {
+  proposal <- list(name = "GeometricNonObserved", inputs=to_ergm_Cdouble(is.na(nw)))
+  proposal
 }

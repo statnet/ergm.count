@@ -15,17 +15,17 @@
 \alias{Poisson}
 \alias{Binomial}
 \alias{Geometric}
-\alias{InitReference.Poisson}
-\alias{InitReference.Binomial}
-\alias{InitReference.Geometric}
-\alias{InitWtMHP.Poisson}
-\alias{InitWtMHP.ZIPoisson}
-\alias{InitWtMHP.PoissonTNT}
-\alias{InitWtMHP.PoissonNonObserved}
-\alias{InitWtMHP.Binomial}
-\alias{InitWtMHP.BinomialNonObserved}
-\alias{InitWtMHP.Geometric}
-\alias{InitWtMHP.GeometricNonObserved}
+\alias{InitErgmReference.Poisson}
+\alias{InitErgmReference.Binomial}
+\alias{InitErgmReference.Geometric}
+\alias{InitWtErgmProposal.Poisson}
+\alias{InitWtErgmProposal.ZIPoisson}
+\alias{InitWtErgmProposal.PoissonTNT}
+\alias{InitWtErgmProposal.PoissonNonObserved}
+\alias{InitWtErgmProposal.Binomial}
+\alias{InitWtErgmProposal.BinomialNonObserved}
+\alias{InitWtErgmProposal.Geometric}
+\alias{InitWtErgmProposal.GeometricNonObserved}
 
 \docType{methods}
 
