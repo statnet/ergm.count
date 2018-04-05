@@ -1,4 +1,4 @@
-#  File R/InitReference.R in package ergm.count, part of the Statnet suite
+#  File R/InitErgmReference.R in package ergm.count, part of the Statnet suite
 #  of packages for network analysis, http://statnet.org .
 #
 #  This software is distributed under the GPL-3 license.  It is free,
@@ -7,16 +7,16 @@
 #
 #  Copyright 2008-2016 Statnet Commons
 #######################################################################
-InitReference.Poisson <- function(lhs.nw, ...){
+InitErgmReference.Poisson <- function(lhs.nw, ...){
   list(name="Poisson")
 }
 
-InitReference.Binomial <- function(lhs.nw, trials, ...){
+InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
   
   list(name="Binomial", trials=trials)
 }
 
-InitReference.Geometric <- function(lhs.nw, ...){
+InitErgmReference.Geometric <- function(lhs.nw, ...){
   
   list(name="Geometric")
 }
