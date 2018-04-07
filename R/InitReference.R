@@ -8,15 +8,13 @@
 #  Copyright 2008-2016 Statnet Commons
 #######################################################################
 InitErgmReference.Poisson <- function(lhs.nw, ...){
-  list(name="Poisson")
+  list(name="Poisson", init_methods = c("CD","zeros"))
 }
 
 InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
-  
-  list(name="Binomial", trials=trials)
+  list(name="Binomial", arguments=list(trials=trials), init_methods = c("CD","zeros"))
 }
 
 InitErgmReference.Geometric <- function(lhs.nw, ...){
-  
-  list(name="Geometric")
+  list(name="Geometric", init_methods = c("CD","zeros"))
 }
