@@ -42,7 +42,7 @@ InitWtErgmProposal.PoissonNonObserved <- function(arguments, nw, response) {
 }
 
 InitWtErgmProposal.Binomial <- function(arguments, nw, response) {
-  proposal <- list(name = "Binomial", inputs=arguments$reference$trials)
+  proposal <- list(name = "Binomial", inputs=arguments$reference$arguments$trials)
   proposal
 }
 
