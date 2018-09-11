@@ -5,7 +5,7 @@
 #  open source, and has the attribution requirements (GPL Section 7) at
 #  http://statnet.org/attribution
 #
-#  Copyright 2008-2016 Statnet Commons
+#  Copyright 2008-2018 Statnet Commons
 #######################################################################
 InitErgmReference.Poisson <- function(lhs.nw, ...){
   list(name="Poisson", init_methods = c("CD","zeros"))

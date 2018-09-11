@@ -5,7 +5,7 @@
 #  open source, and has the attribution requirements (GPL Section 7) at
 #  http://statnet.org/attribution
 #
-#  Copyright 2008-2016 Statnet Commons
+#  Copyright 2008-2018 Statnet Commons
 #######################################################################
 InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
   a <- check.ErgmTerm(nw, arglist,
