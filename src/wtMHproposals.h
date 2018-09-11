@@ -10,7 +10,7 @@
 #ifndef WTMHPROPOSALS_H
 #define WTMHPROPOSALS_H
 
-#include "wtMHproposal.h"
+#include "ergm_wtMHproposal.h"
 
 void MH_Poisson(WtMHproposal *MHp, WtNetwork *nwp);
 void MH_ZIPoisson(WtMHproposal *MHp, WtNetwork *nwp);
