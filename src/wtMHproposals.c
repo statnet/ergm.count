@@ -15,11 +15,11 @@
 #define Mweight (MHp->toggleweight)
 
 /*********************
- void MH_Poisson
+ WtMH_P_FN(MH_Poisson
 
  Default MH algorithm for Poisson-reference ERGM
 *********************/
-void MH_Poisson(WtMHproposal *MHp, WtNetwork *nwp)  {  
+WtMH_P_FN(MH_Poisson){
   double oldwt;
   
   if(MHp->ntoggles == 0) { // Initialize Poisson 
@@ -41,12 +41,12 @@ void MH_Poisson(WtMHproposal *MHp, WtNetwork *nwp)  {
 }
 
 /*********************
- void MH_ZIPoisson
+ WtMH_P_FN(MH_ZIPoisson
 
  MH algorithm for Poisson-reference ERGM with zero-inflating terms.
  Ocassionally proposes jumps to 0.
 *********************/
-void MH_ZIPoisson(WtMHproposal *MHp, WtNetwork *nwp)  {  
+WtMH_P_FN(MH_ZIPoisson){
   double oldwt, p0=MHp->inputs[0];
   
   if(MHp->ntoggles == 0) { // Initialize Poisson 
@@ -77,12 +77,12 @@ void MH_ZIPoisson(WtMHproposal *MHp, WtNetwork *nwp)  {
 }
 
 /*********************
- void MH_ZIPoisson
+ WtMH_P_FN(MH_ZIPoisson
 
  MH algorithm for Poisson-reference ERGM with zero-inflating terms.
  Ocassionally proposes jumps to 0.
 *********************/
-void MH_PoissonTNT(WtMHproposal *MHp, WtNetwork *nwp)  {  
+WtMH_P_FN(MH_PoissonTNT){
   Edge nedges=nwp->nedges;
   double oldwt;
   static double comp, odds;
@@ -128,11 +128,11 @@ void MH_PoissonTNT(WtMHproposal *MHp, WtNetwork *nwp)  {
 
   
 /*********************
- void MH_PoissonNonObserved
+ WtMH_P_FN(MH_PoissonNonObserved
 
  Missing data MH algorithm for Poisson-reference ERGM on bipartite networks.
 *********************/
-void MH_PoissonNonObserved(WtMHproposal *MHp, WtNetwork *nwp)  {  
+WtMH_P_FN(MH_PoissonNonObserved){
   Edge nmissing = MHp->inputs[0];
 
   if(MHp->ntoggles == 0) { /* Initialize */
@@ -168,11 +168,11 @@ void MH_PoissonNonObserved(WtMHproposal *MHp, WtNetwork *nwp)  {
 
 
 /*********************
- void MH_Binomial
+ WtMH_P_FN(MH_Binomial
 
  Default MH algorithm for binomial-reference ERGM
 *********************/
-void MH_Binomial(WtMHproposal *MHp, WtNetwork *nwp)  {  
+WtMH_P_FN(MH_Binomial){
   double oldwt;
   static unsigned int trials;
   
@@ -205,11 +205,11 @@ void MH_Binomial(WtMHproposal *MHp, WtNetwork *nwp)  {
 
 
 /*********************
- void MH_BinomialNonObserved
+ WtMH_P_FN(MH_BinomialNonObserved
 
  Missing data MH algorithm for binomial-reference ERGM on bipartite networks.
 *********************/
-void MH_BinomialNonObserved(WtMHproposal *MHp, WtNetwork *nwp)  {  
+WtMH_P_FN(MH_BinomialNonObserved){
   Edge nmissing = MHp->inputs[1];
 
   static unsigned int trials;
@@ -256,11 +256,11 @@ void MH_BinomialNonObserved(WtMHproposal *MHp, WtNetwork *nwp)  {
 
 
 /*********************
- void MH_Geometric
+ WtMH_P_FN(MH_Geometric
 
  Default MH algorithm for geometric-reference ERGM
 *********************/
-void MH_Geometric(WtMHproposal *MHp, WtNetwork *nwp)  {  
+WtMH_P_FN(MH_Geometric){
   double oldwt;
   
   if(MHp->ntoggles == 0) { // Initialize Geometric 
@@ -289,11 +289,11 @@ void MH_Geometric(WtMHproposal *MHp, WtNetwork *nwp)  {
 
 
 /*********************
- void MH_GeometricNonObserved
+ WtMH_P_FN(MH_GeometricNonObserved
 
  Missing data MH algorithm for geometric-reference ERGM.
 *********************/
-void MH_GeometricNonObserved(WtMHproposal *MHp, WtNetwork *nwp)  {  
+WtMH_P_FN(MH_GeometricNonObserved){
   Edge nmissing = MHp->inputs[0];
 
   if(MHp->ntoggles == 0) { /* Initialize */

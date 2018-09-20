@@ -12,13 +12,13 @@
 
 #include "ergm_wtMHproposal.h"
 
-void MH_Poisson(WtMHproposal *MHp, WtNetwork *nwp);
-void MH_ZIPoisson(WtMHproposal *MHp, WtNetwork *nwp);
-void MH_PoissonNonObserved(WtMHproposal *MHp, WtNetwork *nwp);
-void MH_Binomial(WtMHproposal *MHp, WtNetwork *nwp);
-void MH_BinomialNonObserved(WtMHproposal *MHp, WtNetwork *nwp);
-void MH_Geometric(WtMHproposal *MHp, WtNetwork *nwp);
-void MH_GeometricNonObserved(WtMHproposal *MHp, WtNetwork *nwp);
+WtMH_P_FN(MH_Poisson);
+WtMH_P_FN(MH_ZIPoisson);
+WtMH_P_FN(MH_PoissonNonObserved);
+WtMH_P_FN(MH_Binomial);
+WtMH_P_FN(MH_BinomialNonObserved);
+WtMH_P_FN(MH_Geometric);
+WtMH_P_FN(MH_GeometricNonObserved);
 
 #endif 
 
