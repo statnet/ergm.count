@@ -19,7 +19,7 @@
 
  Default MH algorithm for Poisson-reference ERGM
 *********************/
-WtMH_P_FN(MH_Poisson){
+WtMH_P_FN(MH_Poisson){  
   double oldwt;
   
   if(MHp->ntoggles == 0) { // Initialize Poisson 
@@ -46,7 +46,7 @@ WtMH_P_FN(MH_Poisson){
  MH algorithm for Poisson-reference ERGM with zero-inflating terms.
  Ocassionally proposes jumps to 0.
 *********************/
-WtMH_P_FN(MH_ZIPoisson){
+WtMH_P_FN(MH_ZIPoisson){  
   double oldwt, p0=MHp->inputs[0];
   
   if(MHp->ntoggles == 0) { // Initialize Poisson 
@@ -82,7 +82,7 @@ WtMH_P_FN(MH_ZIPoisson){
  MH algorithm for Poisson-reference ERGM with zero-inflating terms.
  Ocassionally proposes jumps to 0.
 *********************/
-WtMH_P_FN(MH_PoissonTNT){
+WtMH_P_FN(MH_PoissonTNT){  
   Edge nedges=nwp->nedges;
   double oldwt;
   static double comp, odds;
@@ -132,7 +132,7 @@ WtMH_P_FN(MH_PoissonTNT){
 
  Missing data MH algorithm for Poisson-reference ERGM on bipartite networks.
 *********************/
-WtMH_P_FN(MH_PoissonNonObserved){
+WtMH_P_FN(MH_PoissonNonObserved){  
   Edge nmissing = MHp->inputs[0];
 
   if(MHp->ntoggles == 0) { /* Initialize */
@@ -172,7 +172,7 @@ WtMH_P_FN(MH_PoissonNonObserved){
 
  Default MH algorithm for binomial-reference ERGM
 *********************/
-WtMH_P_FN(MH_Binomial){
+WtMH_P_FN(MH_Binomial){  
   double oldwt;
   static unsigned int trials;
   
@@ -209,7 +209,7 @@ WtMH_P_FN(MH_Binomial){
 
  Missing data MH algorithm for binomial-reference ERGM on bipartite networks.
 *********************/
-WtMH_P_FN(MH_BinomialNonObserved){
+WtMH_P_FN(MH_BinomialNonObserved){  
   Edge nmissing = MHp->inputs[1];
 
   static unsigned int trials;
@@ -260,7 +260,7 @@ WtMH_P_FN(MH_BinomialNonObserved){
 
  Default MH algorithm for geometric-reference ERGM
 *********************/
-WtMH_P_FN(MH_Geometric){
+WtMH_P_FN(MH_Geometric){  
   double oldwt;
   
   if(MHp->ntoggles == 0) { // Initialize Geometric 
@@ -293,7 +293,7 @@ WtMH_P_FN(MH_Geometric){
 
  Missing data MH algorithm for geometric-reference ERGM.
 *********************/
-WtMH_P_FN(MH_GeometricNonObserved){
+WtMH_P_FN(MH_GeometricNonObserved){  
   Edge nmissing = MHp->inputs[0];
 
   if(MHp->ntoggles == 0) { /* Initialize */
