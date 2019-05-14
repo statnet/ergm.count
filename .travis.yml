@@ -2,8 +2,20 @@ language: r
 r:
 - release
 - devel
+os:
+- linux
+- osx
+## - windows
+matrix:
+  exclude:
+  - r: devel
+    os: osx
+##   - r: devel
+##     os: windows
 sudo: false
 cache: packages
+before_install:
+- if [ "${TRAVIS_OS_NAME}" == "osx" ]; then sudo tlmgr install comment multirow; export _R_CHECK_FORCE_SUGGESTS_=FALSE; fi
 r_github_packages:
 - statnet/network
 - statnet/statnet.common
