@@ -14,23 +14,35 @@
 % When a release is forked, copy the sections to a new release and
 % delete unused sections.
 
-\section{Changes in version 3.2.1}{
-  
-  %% \subsection{NEW FEATURES}{
-  %%   \itemize{
-  %%   } 
-  %% }
-  
-  %% \subsection{OTHER USER-VISIBLE CHANGES}{
+%% \section{Changes in version X.Y.Z}{
+
+%%   \subsection{NEW FEATURES}{
+%%     \itemize{
+%%       \item{
+%%       }
+%%     }
+%%   }
+
+
+%%   \subsection{BUG FIXES}{
+%%     \itemize{
+%%       \item{
+%%       }
+%%     }
+%%   }
+
+
+%%   \subsection{OTHER USER-VISIBLE CHANGES}{
+%%     \itemize{
+%%       \item{
+%%       }
+%%     }
+%%   }
+
+  %% \subsection{C-LEVEL FACILITIES}{
   %%   \itemize{
   %%   }
   %% }
-
-  % \subsection{C-LEVEL FACILITIES}{
-  %   \itemize{
-  %     \item It is not clear that we need a subsection called "C-LEVEL FACILITIES".
-  %   }
-  % }
 
   % \subsection{UTILITIES}{
   %   \itemize{
@@ -50,10 +62,30 @@
   %   }
   % }
 
-  % \subsection{DEPRECATED & DEFUNCT}{
-  %   \itemize{
-  %   }
-  % }
+%% }
+
+\section{Changes in version 3.4.0}{
+
+  \subsection{BUG FIXES}{
+    \itemize{
+
+      \item Package has been ported to the \code{\link[ergm-package]{ergm}} 3.10 API changes.
+
+    }
+  }
+
+  \subsection{OTHER USER-VISIBLE CHANGES}{
+    \itemize{
+
+      \item Package now Imports \code{statnet.common} rather than depending on it.
+
+    }
+  }
+
+}
+
+
+\section{Changes in version 3.3.0}{
 
   \subsection{BUG FIXES}{
     \itemize{
@@ -66,18 +98,18 @@
 
 
 \section{Changes in version 3.2}{
-  
+
   \subsection{NEW FEATURES}{
     \itemize{
       \item \code{ergm.count} now makes use of contrastive divergence in
       \code{\link[=ergm:ergm-package]{ergm}} to obtain starting values for
       the MCMLE.
-      
+
       \item Poisson-reference ERGMs now have TNT-style proposal,
       optimized for sparse networks.
-    } 
+    }
   }
-  
+
   \subsection{OTHER USER-VISIBLE CHANGES}{
     \itemize{
       \item The \code{\link{CMP}} term now adds, rather than subtracts
@@ -110,11 +142,11 @@
       thus numbered 3.1.
     }
   }
-  
+
   \subsection{NEW FEATURES}{
     \itemize{
       \item A number of reference measures for count data have been
       implemented. See \code{? 'ergm.count-package'} and \code{? 'ergm-references'} for help.
-    } 
+    }
   }
 }
