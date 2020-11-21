@@ -12,4 +12,5 @@ Imports: statnet.common (>= 4.1)
 Description: A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts.
 License: GPL-3 + file LICENSE
 URL: http://statnet.org
+Remotes: github::statnet/ergm-private@dev
 
