@@ -23,4 +23,5 @@ Suggests:
 VignetteBuilder: rmarkdown, knitr
 Remotes:
     github::statnet/network@master,
+    github::statnet/statnet.common@master,
     github::statnet/ergm-private@dev
