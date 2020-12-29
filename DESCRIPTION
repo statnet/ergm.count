@@ -21,4 +21,6 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: rmarkdown, knitr
-Remotes: github::statnet/ergm-private@dev
+Remotes:
+    github::statnet/network@master,
+    github::statnet/ergm-private@dev
