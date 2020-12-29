@@ -86,3 +86,4 @@ dkms.conf
 # Backup files
 *~
 *.bak
+inst/doc
