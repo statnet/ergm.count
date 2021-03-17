@@ -1,6 +1,5 @@
 # `ergm.count`: Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count Edges
 
-[![Build Status](https://travis-ci.org/statnet/ergm.count.svg?branch=master)](https://travis-ci.org/statnet/ergm.count)
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/ergm.count?color=2ED968)](https://cranlogs.r-pkg.org/)
 [![cran version](https://www.r-pkg.org/badges/version/ergm.count)](https://cran.r-project.org/package=ergm.count)
 [![R build status](https://github.com/statnet/ergm.count/workflows/R-CMD-check/badge.svg)](https://github.com/statnet/ergm.count/actions)

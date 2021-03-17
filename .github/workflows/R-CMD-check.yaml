@@ -16,6 +16,17 @@ env:
   PRIVATE: ''
 
 jobs:
+  Remove-Old-Artifacts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+    - name: Remove old artifacts
+      uses: c-hive/gha-remove-artifacts@v1.2.0
+      with:
+        age: '1 month'
+        skip-recent: 8
+
   Set-Matrix-Private:
     runs-on: ubuntu-latest
     outputs:
@@ -53,10 +64,10 @@ jobs:
         run: |
           if [[ "${{ env.IAM }}" == 'public' ]] # Public: full set.
           then
-            echo "::set-output name=matrix::{\"config\":[{\"os\":\"windows-latest\", \"r\":\"release\"},{\"os\":\"macOS-latest\", \"r\":\"release\"},{\"os\":\"ubuntu-20.04\", \"r\":\"release\", \"rspm\":\"https://packagemanager.rstudio.com/cran/__linux__/focal/latest\"},{\"os\":\"ubuntu-20.04\", \"r\":\"devel\", \"rspm\":\"https://packagemanager.rstudio.com/cran/__linux__/focal/latest\"}]}"
+            echo "::set-output name=matrix::{\"config\":[{\"os\":\"windows-latest\", \"r\":\"release\", \"timeout\":360, \"full\":\"no\"}, {\"os\":\"macOS-latest\", \"r\":\"release\", \"timeout\":360, \"full\":\"no\"}, {\"os\":\"ubuntu-20.04\", \"r\":\"release\", \"rspm\":\"https://packagemanager.rstudio.com/cran/__linux__/focal/latest\", \"timeout\":360, \"full\":\"yes\"}, {\"os\":\"ubuntu-20.04\", \"r\":\"devel\", \"rspm\":\"https://packagemanager.rstudio.com/cran/__linux__/focal/latest\", \"timeout\":360, \"full\":\"no\"}]}"
           elif [[ "${{ env.FOUND_PUBLIC }}" != '0' ]] # Private with no public analogue: reduced set.
           then
-            echo "::set-output name=matrix::{\"config\":[{\"os\":\"ubuntu-20.04\", \"r\":\"release\", \"rspm\":\"https://packagemanager.rstudio.com/cran/__linux__/focal/latest\"}]}"
+            echo "::set-output name=matrix::{\"config\":[{\"os\":\"ubuntu-20.04\", \"r\":\"release\", \"rspm\":\"https://packagemanager.rstudio.com/cran/__linux__/focal/latest\", \"timeout\":10, \"full\":\"no\"}]}"
           else
             echo "::set-output name=matrix::" # Private with public analogue: no checking.
           fi
@@ -148,9 +159,11 @@ jobs:
         shell: bash
 
       - name: Check
+        timeout-minutes: ${{ matrix.config.timeout }}
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
           _R_CHECK_FORCE_SUGGESTS_: ${{ runner.os != 'macOS' }} # Rmpi is not available on macOS.
+          ENABLE_statnet_TESTS: ${{ matrix.config.full }}
         run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran", "--no-build-vignettes"), build_args = c("--no-manual", "--no-build-vignettes"), error_on = "error", check_dir = "check")
         shell: Rscript {0}
 
