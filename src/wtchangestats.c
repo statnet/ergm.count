@@ -17,16 +17,16 @@
  Turns a Poisson-reference or geometric-reference ERGM into a Conway-Maxwell-Poisson distribution
 *****************/
 WtC_CHANGESTAT_FN(c_sumlogfactorial){
-  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(GETWT(tail,head));
+  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(edgestate);
 }
 
 WtC_CHANGESTAT_FN(c_CMB){
-  double oldweight = GETWT(tail,head), ntrials = INPUT_PARAM[0];
-  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(oldweight) + lgamma1p(ntrials-weight)-lgamma1p(ntrials-oldweight);
+  double ntrials = INPUT_PARAM[0];
+  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(edgestate) + lgamma1p(ntrials-weight)-lgamma1p(ntrials-edgestate);
 }
 
 WtC_CHANGESTAT_FN(c_CMB2){
-  double oldweight = GETWT(tail,head), ntrials = INPUT_PARAM[0];
-  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(oldweight);
-  CHANGE_STAT[1] = lgamma1p(ntrials-weight)-lgamma1p(ntrials-oldweight);
+  double ntrials = INPUT_PARAM[0];
+  CHANGE_STAT[0] = lgamma1p(weight)-lgamma1p(edgestate);
+  CHANGE_STAT[1] = lgamma1p(ntrials-weight)-lgamma1p(ntrials-edgestate);
 }

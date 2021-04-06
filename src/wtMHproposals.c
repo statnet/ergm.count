@@ -20,7 +20,7 @@
  Default MH algorithm for Poisson-reference ERGM
 *********************/
 WtMH_P_FN(MH_Poisson){  
-  double oldwt;
+  double edgestate;
   
   if(MHp->ntoggles == 0) { // Initialize Poisson 
     MHp->ntoggles=1;
@@ -29,15 +29,15 @@ WtMH_P_FN(MH_Poisson){
 
   GetRandDyad(Mtail, Mhead, nwp);
   
-  oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
+  edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
   const double fudge = 0.5; // Mostly comes in when proposing from 0.
 
   do{
-    Mweight[0] = rpois(oldwt + fudge);    
-  }while(Mweight[0]==oldwt);
+    Mweight[0] = rpois(edgestate + fudge);
+  }while(Mweight[0]==edgestate);
     
-  MHp->logratio += (1 + log(Mweight[0]+fudge))*oldwt - (1 + log(oldwt+fudge))*Mweight[0] + log(1-dpois(oldwt,oldwt+fudge,0)) - log(1-dpois(Mweight[0],Mweight[0]+fudge,0));
+  MHp->logratio += (1 + log(Mweight[0]+fudge))*edgestate - (1 + log(edgestate+fudge))*Mweight[0] + log(1-dpois(edgestate,edgestate+fudge,0)) - log(1-dpois(Mweight[0],Mweight[0]+fudge,0));
 }
 
 /*********************
@@ -47,7 +47,7 @@ WtMH_P_FN(MH_Poisson){
  Ocassionally proposes jumps to 0.
 *********************/
 WtMH_P_FN(MH_ZIPoisson){  
-  double oldwt, p0=MHp->inputs[0];
+  double edgestate, p0=MHp->inputs[0];
   
   if(MHp->ntoggles == 0) { // Initialize Poisson 
     MHp->ntoggles=1;
@@ -56,24 +56,24 @@ WtMH_P_FN(MH_ZIPoisson){
   
   GetRandDyad(Mtail, Mhead, nwp);
 
-  oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
+  edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
   const double fudge = 0.5; // Mostly comes in when proposing from 0.
 
-  if(oldwt!=0 && unif_rand()<p0) Mweight[0] = 0;
+  if(edgestate!=0 && unif_rand()<p0) Mweight[0] = 0;
   else do{
-      Mweight[0] = rpois(oldwt + fudge);    
-    }while(Mweight[0]==oldwt);
+      Mweight[0] = rpois(edgestate + fudge);
+    }while(Mweight[0]==edgestate);
  
   // This could probably be done in a numerically-better way:
   // jumping from 0;
   // using (-fudge + fudge*Mweight[0]) in place of dpois(Mweight[0],fudge,1) incorporates the reference measure
-  if(oldwt==0)
+  if(edgestate==0)
     MHp->logratio += log(p0+(1-p0)*dpois(0,Mweight[0]+fudge,0)/(1-dpois(Mweight[0],Mweight[0]+fudge,0))) - (-fudge + log(fudge)*Mweight[0]) + log(1-dpois(0,fudge,0)) ;
   else if(Mweight[0]==0)
-    MHp->logratio -= log(p0+(1-p0)*dpois(0,oldwt+fudge,0)/(1-dpois(oldwt,oldwt+fudge,0))) - (-fudge + log(fudge)*oldwt) + log(1-dpois(0,fudge,0));
+    MHp->logratio -= log(p0+(1-p0)*dpois(0,edgestate+fudge,0)/(1-dpois(edgestate,edgestate+fudge,0))) - (-fudge + log(fudge)*edgestate) + log(1-dpois(0,fudge,0));
   else // otherwise
-    MHp->logratio += (1 + log(Mweight[0]+fudge))*oldwt - (1 + log(oldwt+fudge))*Mweight[0] + log(1-dpois(oldwt,oldwt+fudge,0)) - log(1-dpois(Mweight[0],Mweight[0]+fudge,0)); // Note that (1-p0)s cancel
+    MHp->logratio += (1 + log(Mweight[0]+fudge))*edgestate - (1 + log(edgestate+fudge))*Mweight[0] + log(1-dpois(edgestate,edgestate+fudge,0)) - log(1-dpois(Mweight[0],Mweight[0]+fudge,0)); // Note that (1-p0)s cancel
 }
 
 /*********************
@@ -84,7 +84,7 @@ WtMH_P_FN(MH_ZIPoisson){
 *********************/
 WtMH_P_FN(MH_PoissonTNT){  
   Edge nedges=nwp->nedges;
-  double oldwt;
+  double edgestate;
   static double comp, odds;
   static Dyad ndyads;
   const double fudge = 0.5; // Mostly comes in when proposing from 0.
@@ -98,29 +98,29 @@ WtMH_P_FN(MH_PoissonTNT){
   }
 
   if (unif_rand() < comp && nedges > 0) { /* Select a tie at random */
-    WtGetRandEdge(Mtail, Mhead, &oldwt, nwp);
+    WtGetRandEdge(Mtail, Mhead, &edgestate, nwp);
     Mweight[0] = 0;
   }else{ /* Select a dyad at random */
     GetRandDyad(Mtail, Mhead, nwp);
-    oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
+    edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
     do{
-      Mweight[0] = rpois(oldwt + fudge);    
-    }while(Mweight[0]==oldwt);
+      Mweight[0] = rpois(edgestate + fudge);
+    }while(Mweight[0]==edgestate);
   }
 
   // Log-probability of a Poisson jump from from to to, given that we didn't stay put:
 #define ldpoisj(from,to) (dpois(to, from+fudge, 1) - log1p(-dpois(from, from+fudge, 0)))
 #define dpoisj(from,to) exp(dpois(to, from+fudge, 1) - log1p(-dpois(from, from+fudge, 0)))
   
-  if(oldwt==0){
-    MHp->logratio += log(dpoisj(Mweight[0],oldwt)+odds*ndyads/(nedges+1)) - ldpoisj(oldwt,Mweight[0]) + (nedges==0 ? log(1-comp) : 0);
+  if(edgestate==0){
+    MHp->logratio += log(dpoisj(Mweight[0],edgestate)+odds*ndyads/(nedges+1)) - ldpoisj(edgestate,Mweight[0]) + (nedges==0 ? log(1-comp) : 0);
   }else if(Mweight[0]==0){
-    MHp->logratio += ldpoisj(Mweight[0],oldwt) - log(dpoisj(oldwt,Mweight[0])+odds*ndyads/nedges) - (nedges==1 ? log(1-comp) : 0);
+    MHp->logratio += ldpoisj(Mweight[0],edgestate) - log(dpoisj(edgestate,Mweight[0])+odds*ndyads/nedges) - (nedges==1 ? log(1-comp) : 0);
   }else{
-    MHp->logratio += ldpoisj(Mweight[0],oldwt) - ldpoisj(oldwt,Mweight[0]);
+    MHp->logratio += ldpoisj(Mweight[0],edgestate) - ldpoisj(edgestate,Mweight[0]);
   }
   // h(y)
-  MHp->logratio += -lgamma1p(Mweight[0]) - -lgamma1p(oldwt);
+  MHp->logratio += -lgamma1p(Mweight[0]) - -lgamma1p(edgestate);
   
 #undef ldpoisj
 #undef dpoisj
@@ -154,15 +154,15 @@ WtMH_P_FN(MH_PoissonNonObserved){
   Mtail[0]=MHp->inputs[rane];
   Mhead[1]=MHp->inputs[nmissing+rane];
 
-  double oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
+  double edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
   const double fudge = 0.5; // Mostly comes in when proposing from 0.
 
   do{
-    Mweight[0] = rpois(oldwt + fudge);    
-  }while(Mweight[0]==oldwt);
+    Mweight[0] = rpois(edgestate + fudge);
+  }while(Mweight[0]==edgestate);
     
-  MHp->logratio += (1 + log(Mweight[0]+fudge))*oldwt - (1 + log(oldwt+fudge))*Mweight[0] + log(1-dpois(oldwt,oldwt+fudge,0)) - log(1-dpois(Mweight[0],Mweight[0]+fudge,0));
+  MHp->logratio += (1 + log(Mweight[0]+fudge))*edgestate - (1 + log(edgestate+fudge))*Mweight[0] + log(1-dpois(edgestate,edgestate+fudge,0)) - log(1-dpois(Mweight[0],Mweight[0]+fudge,0));
 }
 
 
@@ -173,7 +173,7 @@ WtMH_P_FN(MH_PoissonNonObserved){
  Default MH algorithm for binomial-reference ERGM
 *********************/
 WtMH_P_FN(MH_Binomial){  
-  double oldwt;
+  double edgestate;
   static unsigned int trials;
   
   if(MHp->ntoggles == 0) { // Initialize Binomial 
@@ -184,23 +184,23 @@ WtMH_P_FN(MH_Binomial){
   
   GetRandDyad(Mtail, Mhead, nwp);
   
-  oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
+  edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
   const double fudge = 0.5;
 
   // Use proposal success probability between fudge/trials and (trials-fudge)/trials.
-  double p = (fudge + oldwt * (trials-fudge*2)/trials)/trials;
+  double p = (fudge + edgestate * (trials-fudge*2)/trials)/trials;
 
   do{
     Mweight[0] = rbinom(trials, p);
-  }while(Mweight[0]==oldwt);
+  }while(Mweight[0]==edgestate);
 
   // What the proposal success probability would have been starting from Mweight[0].
   double revp = (fudge + Mweight[0] * (trials-fudge*2)/trials)/trials;
 
-  MHp->logratio += (lchoose(trials, Mweight[0]) - lchoose(trials, oldwt)) + // h(y*)/h(y)
-    (dbinom(oldwt, trials, revp, 1) - log1p(-dbinom(Mweight[0], trials, revp, 0))) - // q(y|y*)
-    (dbinom(Mweight[0], trials, p, 1) - log1p(-dbinom(oldwt, trials, p, 0))); // q(y*|y)
+  MHp->logratio += (lchoose(trials, Mweight[0]) - lchoose(trials, edgestate)) + // h(y*)/h(y)
+    (dbinom(edgestate, trials, revp, 1) - log1p(-dbinom(Mweight[0], trials, revp, 0))) - // q(y|y*)
+    (dbinom(Mweight[0], trials, p, 1) - log1p(-dbinom(edgestate, trials, p, 0))); // q(y*|y)
 }
 
 
@@ -234,24 +234,24 @@ WtMH_P_FN(MH_BinomialNonObserved){
   Mtail[0]=MHp->inputs[rane+1];
   Mhead[1]=MHp->inputs[nmissing+rane+1];
 
-  double oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
+  double edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
 
   const double fudge = 0.5;
 
   // Use proposal success probability between fudge/trials and (trials-fudge)/trials.
-  double p = (fudge + oldwt * (trials-fudge*2)/trials)/trials;
+  double p = (fudge + edgestate * (trials-fudge*2)/trials)/trials;
 
   do{
     Mweight[0] = rbinom(trials, p);
-  }while(Mweight[0]==oldwt);
+  }while(Mweight[0]==edgestate);
 
   // What the proposal success probability would have been starting from Mweight[0].
   double revp = (fudge + Mweight[0] * (trials-fudge*2)/trials)/trials;
 
-  MHp->logratio += (lchoose(trials, Mweight[0]) - lchoose(trials, oldwt)) + // h(y*)/h(y)
-    (dbinom(oldwt, trials, revp, 1) - log1p(-dbinom(Mweight[0], trials, revp, 0))) - // q(y|y*)
-    (dbinom(Mweight[0], trials, p, 1) - log1p(-dbinom(oldwt, trials, p, 0))); // q(y*|y)
+  MHp->logratio += (lchoose(trials, Mweight[0]) - lchoose(trials, edgestate)) + // h(y*)/h(y)
+    (dbinom(edgestate, trials, revp, 1) - log1p(-dbinom(Mweight[0], trials, revp, 0))) - // q(y|y*)
+    (dbinom(Mweight[0], trials, p, 1) - log1p(-dbinom(edgestate, trials, p, 0))); // q(y*|y)
 }
 
 
@@ -261,7 +261,7 @@ WtMH_P_FN(MH_BinomialNonObserved){
  Default MH algorithm for geometric-reference ERGM
 *********************/
 WtMH_P_FN(MH_Geometric){  
-  double oldwt;
+  double edgestate;
   
   if(MHp->ntoggles == 0) { // Initialize Geometric 
     MHp->ntoggles=1;
@@ -270,21 +270,21 @@ WtMH_P_FN(MH_Geometric){
   
   GetRandDyad(Mtail, Mhead, nwp);
   
-  oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
+  edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
   const double fudge = 0.5; // Mostly comes in when proposing from 0.
 
-  double p = 1/(oldwt + 1 + fudge);
+  double p = 1/(edgestate + 1 + fudge);
 
   do{
     Mweight[0] = rgeom(p);    
-  }while(Mweight[0]==oldwt);
+  }while(Mweight[0]==edgestate);
 
   double revp = 1/(Mweight[0] + 1 + fudge);
     
   MHp->logratio += // h(y) is uniform
-    (dgeom(oldwt, revp, 1) - log1p(-dgeom(Mweight[0], revp, 0))) - // q(y|y*)
-    (dgeom(Mweight[0], p, 1) - log1p(-dgeom(oldwt, p, 0))); // q(y*|y)
+    (dgeom(edgestate, revp, 1) - log1p(-dgeom(Mweight[0], revp, 0))) - // q(y|y*)
+    (dgeom(Mweight[0], p, 1) - log1p(-dgeom(edgestate, p, 0))); // q(y*|y)
 }
 
 
@@ -315,19 +315,19 @@ WtMH_P_FN(MH_GeometricNonObserved){
   Mtail[0]=MHp->inputs[rane];
   Mhead[1]=MHp->inputs[nmissing+rane];
 
-  double oldwt = WtGetEdge(Mtail[0],Mhead[0],nwp);
+  double edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
 
   const double fudge = 0.5; // Mostly comes in when proposing from 0.
 
-  double p = 1/(oldwt + fudge);
+  double p = 1/(edgestate + fudge);
 
   do{
     Mweight[0] = rgeom(p);    
-  }while(Mweight[0]==oldwt);
+  }while(Mweight[0]==edgestate);
 
   double revp = 1/(Mweight[0] + fudge);
     
   MHp->logratio += // h(y) is uniform
-    (dgeom(oldwt, revp, 1) - log1p(-dgeom(Mweight[0], revp, 0))) - // q(y|y*)
-    (dgeom(Mweight[0], p, 1) - log1p(-dgeom(oldwt, p, 0))); // q(y*|y)
+    (dgeom(edgestate, revp, 1) - log1p(-dgeom(Mweight[0], revp, 0))) - // q(y|y*)
+    (dgeom(Mweight[0], p, 1) - log1p(-dgeom(edgestate, p, 0))); // q(y*|y)
 }
