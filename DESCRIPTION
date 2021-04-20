@@ -18,6 +18,7 @@ License: GPL-3 + file LICENSE
 URL: http://statnet.org
 BugReports: https://github.com/statnet/ergm.count/issues
 Suggests:
+    covr,
     knitr,
     rmarkdown
 VignetteBuilder: rmarkdown, knitr
