@@ -2,6 +2,7 @@
 
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/ergm.count?color=2ED968)](https://cranlogs.r-pkg.org/)
 [![cran version](https://www.r-pkg.org/badges/version/ergm.count)](https://cran.r-project.org/package=ergm.count)
+[![Coverage status](https://codecov.io/gh/statnet/ergm.count/branch/master/graph/badge.svg)](https://codecov.io/github/statnet/ergm.count?branch=master)
 [![R build status](https://github.com/statnet/ergm.count/workflows/R-CMD-check/badge.svg)](https://github.com/statnet/ergm.count/actions)
 
 A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts.
@@ -24,3 +25,5 @@ A set of binaries is built after every commit to the repository. We strongly enc
 * [Windows binary (a `.zip` file in a `.zip` file)](https://nightly.link/statnet/ergm.count/workflows/R-CMD-check.yaml/master/Windows-rrelease-binaries.zip)
 
 You will need to extract the MacOS `.tgz` or the Windows `.zip` file from the outer `.zip` file before installing. These binaries are usually built under the latest version of R and their operating system and may not work under other versions.
+
+You may also want to install the corresponding latest binaries for packages on which `ergm.count` depends, in particular [`network`](https://github.com/statnet/network), [`statnet.common`](https://github.com/statnet/statnet.common), and [`ergm`](https://github.com/statnet/ergm).
