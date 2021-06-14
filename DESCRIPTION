@@ -22,9 +22,5 @@ Suggests:
     knitr,
     rmarkdown
 VignetteBuilder: rmarkdown, knitr
-Remotes:
-    github::statnet/network@master,
-    github::statnet/statnet.common@master,
-    github::statnet/ergm@master
 RoxygenNote: 7.1.1
 Encoding: UTF-8
