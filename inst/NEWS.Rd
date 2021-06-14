@@ -64,6 +64,18 @@
 
 %% }
 
+\section{Changes in version 4.0.0}{
+
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item{
+        Package now uses the \code{\link[ergm:ergm-package]{ergm}} 4.0 term API, which should result in a nontrivial speedup.
+      }
+    }
+  }
+}
+
+
 \section{Changes in version 3.4.0}{
 
   \subsection{BUG FIXES}{
