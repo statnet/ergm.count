@@ -7,15 +7,16 @@
 #
 #  Copyright 2008-2019 Statnet Commons
 #######################################################################
-.onAttach <- function(lib, pkg){
+#' @import statnet.common network ergm
+#' @useDynLib ergm.count
+.onAttach <- function(libname, pkgname){
   sm <- statnetStartupMessage("ergm.count",c("statnet"),FALSE)
   if(!is.null(sm)){
     packageStartupMessage(sm)
-    packageStartupMessage(paste(c(strwrap(paste("NOTE: The form of the term ",sQuote("CMP")," has been changed in version 3.2 of ",sQuote("ergm.count"),". See the news or help('CMP') for more information.",sep="")),""),collapse="\n"))
   }
 }
   
-.onLoad <- function(lib, pkg){    
+.onLoad <- function(libname, pkgname){
   .RegisterProposals()
 }
 
