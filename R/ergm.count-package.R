@@ -46,6 +46,6 @@
 #'
 #' Krivitsky PN (2012). Exponential-Family Random Graph Models for Valued
 #' Networks. \emph{Electronic Journal of Statistics}, 2012, 6, 1100-1128.
-#' \href{http://dx.doi.org/10.1214/12-EJS696\code{doi:10.1214/12-EJS696}}
+#' \doi{10.1214/12-EJS696}
 #' @keywords package models
 NULL
