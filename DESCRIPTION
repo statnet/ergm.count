@@ -13,7 +13,7 @@ Imports:
     statnet.common (>= 4.2.0)
 LinkingTo:
     ergm
-Description: A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts.
+Description: A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts. See Krivitsky (2012) <doi:10.1214/12-EJS696> and Krivitsky, Hunter, Morris, and Klumb (2021) <arXiv:2106.04997>.
 License: GPL-3 + file LICENSE
 URL: http://statnet.org
 BugReports: https://github.com/statnet/ergm.count/issues
