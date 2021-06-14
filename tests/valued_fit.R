@@ -26,5 +26,5 @@ efit <- ergm(y ~ sum, response="w", reference=~Poisson, verbose=TRUE, control=co
 summary(efit)
 true.llk <- sum(dpois(na.omit(c(m)), exp(coef(efit)), log=TRUE)) - sum(dpois(na.omit(c(m)), 1, log=TRUE))
 
-stopifnot(abs(coef(efit)-truth)<0.02)
-stopifnot(isTRUE(all.equal(true.llk, unclass(logLik(efit)), check.attributes=FALSE, tolerance=0.1)))
+stopifnot(abs(coef(efit)-truth)/sqrt(vcov(efit, sources="estimation")) < 3)
+stopifnot(abs(true.llk - logLik(efit))/sqrt(attr(logLik(efit),"vcov")) < 3)
