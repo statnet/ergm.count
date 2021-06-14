@@ -41,7 +41,7 @@
 #' @seealso \code{\link{ergm-terms}}, \code{\link{ergm-references}}
 #' @references Handcock MS, Hunter DR, Butts CT, Goodreau SG, Krivitsky PN and
 #' Morris M (2012). _Fit, Simulate and Diagnose Exponential-Family Models for
-#' Networks_. Version 3.1.  Project home page at <URL: http://www.statnet.org>,
+#' Networks_. Version 3.1.  Project home page at <URL: https://www.statnet.org>,
 #' <URL: CRAN.R-project.org/package=ergm>.
 #'
 #' Krivitsky PN (2012). Exponential-Family Random Graph Models for Valued

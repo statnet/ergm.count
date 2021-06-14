@@ -70,7 +70,7 @@
       Krivitsky P. N. and Morris M.
 (2012). _Fit, Simulate and Diagnose Exponential-Family Models for
 Networks_. Version 3.1.  Project home
-page at <URL: http://www.statnet.org>, <URL:
+page at <URL: https://www.statnet.org>, <URL:
 CRAN.R-project.org/package=ergm>.
   
 \item Krivitsky P. N. (2012). Exponential-Family Random Graph Models for Valued Networks. \emph{Electronic Journal of Statistics}, 2012, 6, 1100-1128. \doi{10.1214/12-EJS696}

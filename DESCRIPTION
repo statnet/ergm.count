@@ -1,6 +1,6 @@
 Package: ergm.count
-Version: 4.0-1337
-Date: 2019-02-21
+Version: 4.0-1375
+Date: 2021-06-14
 Title: Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count Edges
 Authors@R: c(
            person("Pavel N.", "Krivitsky", role=c("aut","cre"), email="pavel@uow.edu.au", comment=c(ORCID="0000-0002-9101-3362")),
@@ -15,7 +15,7 @@ LinkingTo:
     ergm
 Description: A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts. See Krivitsky (2012) <doi:10.1214/12-EJS696> and Krivitsky, Hunter, Morris, and Klumb (2021) <arXiv:2106.04997>.
 License: GPL-3 + file LICENSE
-URL: http://statnet.org
+URL: https://statnet.org
 BugReports: https://github.com/statnet/ergm.count/issues
 Suggests:
     covr,
