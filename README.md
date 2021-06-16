@@ -5,7 +5,7 @@
 [![Coverage status](https://codecov.io/gh/statnet/ergm.count/branch/master/graph/badge.svg)](https://codecov.io/github/statnet/ergm.count?branch=master)
 [![R build status](https://github.com/statnet/ergm.count/workflows/R-CMD-check/badge.svg)](https://github.com/statnet/ergm.count/actions)
 
-A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts.
+A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts. See Krivitsky (2012) <doi:10.1214/12-EJS696> and Krivitsky, Hunter, Morris, and Klumb (2021) <arXiv:2106.04997>.
 
 ## Public and Private repositories
 
