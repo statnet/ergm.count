@@ -41,12 +41,12 @@
 #' the Conway-Maxwell-Poisson Distribution.
 #'
 #' For detailed information on how to download and install the software, go to
-#' the Statnet project website: \url{statnet.org}. A tutorial, support
+#' the Statnet project website: \url{https://statnet.org}. A tutorial, support
 #' newsgroup, references and links to further resources are provided there.
 #'
 #' @name ergm.count-package
 #' @docType package
-#' @author Pavel N. Krivitsky \email{pavel@@uow.edu.au}
+#' @author Pavel N. Krivitsky \email{pavel@@statnet.org}
 #' @seealso \code{\link{ergm-terms}}, \code{\link{ergm-references}}
 #' @references Handcock MS, Hunter DR, Butts CT, Goodreau SG, Krivitsky PN and
 #' Morris M (2012). _Fit, Simulate and Diagnose Exponential-Family Models for

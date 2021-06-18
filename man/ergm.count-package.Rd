@@ -38,7 +38,7 @@ statistics specific to modeling counts, such as the \code{\link{CMP}} for
 the Conway-Maxwell-Poisson Distribution.
 
 For detailed information on how to download and install the software, go to
-the Statnet project website: \url{statnet.org}. A tutorial, support
+the Statnet project website: \url{https://statnet.org}. A tutorial, support
 newsgroup, references and links to further resources are provided there.
 }
 \references{
@@ -55,7 +55,7 @@ Networks. \emph{Electronic Journal of Statistics}, 2012, 6, 1100-1128.
 \code{\link{ergm-terms}}, \code{\link{ergm-references}}
 }
 \author{
-Pavel N. Krivitsky \email{pavel@uow.edu.au}
+Pavel N. Krivitsky \email{pavel@statnet.org}
 }
 \keyword{models}
 \keyword{package}
