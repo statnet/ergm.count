@@ -15,3 +15,4 @@ appveyor.yml
 ^revdep$
 ^.github$
 ^codecov\.yml$
+^README.md$
