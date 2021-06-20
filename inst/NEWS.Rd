@@ -69,6 +69,15 @@
   \subsection{NEW FEATURES}{
     \itemize{
       \item{
+        A vignette demonstrating the package's functionality has been added.
+      }
+    }
+  }
+
+  
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item{
         Package now uses the \code{\link[ergm:ergm-package]{ergm}} 4.0 term API, which should result in a nontrivial speedup.
       }
     }
