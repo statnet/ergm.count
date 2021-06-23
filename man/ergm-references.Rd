@@ -61,25 +61,6 @@
     control parameter \code{MCMLE.steplength}.
 
   }
-
-  \subsection{\code{\link[ergm:control.ergm]{MCMLE.trustregion}}}{
-
-    Because Monte Carlo MLE's approximation to the likelihood becomes less
-    accurate as the estimate moves away from the one used for the
-    sample, \code{\link{ergm}} limits how far the optimization can move
-    the estimate for every iteration: the log-likelihood may not change
-    by more than \code{\link[ergm:control.ergm]{MCMLE.trustregion}} control
-    parameter, which defaults to 20. This is an adequate value for
-    binary ERGMs, but because each dyad in a valued ERGM contains more
-    information, this number may be too small, resulting in
-    unnecessarily many iterations needed to find the MLE.
-
-    Automatically setting \code{\link[ergm:control.ergm]{MCMLE.trustregion}} is
-    work in progress, but, in the meantime, you may want to set it to a
-    high number (e.g., 1000).
-    
-  }
-  
 }
 
 

@@ -758,15 +758,13 @@ A few other notes:
 
 * By default, Poisson-reference ERGMs use a variant of the TNT proposal to make sampling from sparse (or 0-inflated) networks more efficient. There is a tuning parameter
   `MCMC.prop.args=list(p0=...)` that can be used to control how much "zero-inflation" there is. It has a sensible default.
-* Informally, a Poisson random variable contains more "information" than a Bernoulli random variable, which means that large changes in likelihood are not necessarily symptomatic of a problem. Thus, it often helps to set `MCMLE.trustregion`, which is normally 20 to something higher.
 
 Now, for the fit and the diagnostics:
 ```{r results="hide", fig.show="hide"}
 zach.pois <- 
   ergm(zach~sum+nonzero+nodefactor("leader")+absdiffcat("faction.id")+
        nodesqrtcovar(TRUE),
-       response="contexts", reference=~Poisson,
-       control=control.ergm(MCMLE.trustregion=100, MCMLE.maxit=50), verbose=TRUE)
+       response="contexts", reference=~Poisson, verbose=TRUE)
 mcmc.diagnostics(zach.pois)
 ```
 
