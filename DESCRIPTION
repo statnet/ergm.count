@@ -27,4 +27,5 @@ Remotes:
     github::statnet/statnet.common@master,
     github::statnet/ergm@master
 RoxygenNote: 7.1.1
+Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
