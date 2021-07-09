@@ -15,7 +15,7 @@ Specifies each
 dyad's baseline distribution to be Poisson with mean 1:
 \eqn{h(y)=\prod_{i,j} 1/y_{i,j}!} , with the support of
 \eqn{y_{i,j}} being natural numbers (and \eqn{0} ). Using
-\link[=`ergmTerm`]{valued ERGM terms} that are
+\link[=ergmTerm]{valued ERGM terms} that are
 "generalized" from their binary counterparts, with form
 \code{"sum"} (see previous link for the list) produces Poisson
 regression. Using \code{\link[=CMP-ergmTerm]{CMP}} induces a

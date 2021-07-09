@@ -37,7 +37,7 @@
 #' discrete uniform reference measures (documented in
 #' \code{\link{ergm-references}}) for use by \code{\link{ergm}} and
 #' \code{\link{simulate.ergm}} to fit models from this family, as well as
-#' statistics specific to modeling counts, such as the \code{\link{CMP}} for
+#' statistics specific to modeling counts, such as the [`CMP`][CMP-ergmTerm]} for
 #' the Conway-Maxwell-Poisson Distribution.
 #'
 #' For detailed information on how to download and install the software, go to

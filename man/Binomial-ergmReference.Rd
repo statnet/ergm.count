@@ -17,7 +17,7 @@ Binomial-reference ERGM
 Specifies each dyad's baseline distribution to be binomial with
 \code{trials} trials and success probability of \eqn{0.5} :
 \eqn{h(y)=\prod_{i,j}{{\mathrm{trials}}\choose{y_{i,j}}}} . Using
-\link[=`ergmTerm`]{valued ERGM terms} that are
+\link[=ergmTerm]{valued ERGM terms} that are
 "generalized" from their binary counterparts, with form
 \code{"sum"} (see previous link for the list) produces logistic
 regression.

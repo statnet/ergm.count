@@ -15,7 +15,7 @@
 #'   dyad's baseline distribution to be Poisson with mean 1:
 #'   \eqn{h(y)=\prod_{i,j} 1/y_{i,j}!} , with the support of
 #'   \eqn{y_{i,j}} being natural numbers (and \eqn{0} ). Using
-#'   [valued ERGM terms][`ergmTerm`] that are
+#'   [valued ERGM terms][ergmTerm] that are
 #'   "generalized" from their binary counterparts, with form
 #'   `"sum"` (see previous link for the list) produces Poisson
 #'   regression. Using [`CMP`][CMP-ergmTerm] induces a
@@ -61,7 +61,7 @@ InitErgmReference.Poisson <- function(lhs.nw, ...){
 #' @details Specifies each dyad's baseline distribution to be binomial with
 #'   `trials` trials and success probability of \eqn{0.5} :
 #'   \eqn{h(y)=\prod_{i,j}{{\mathrm{trials}}\choose{y_{i,j}}}} . Using
-#'   [valued ERGM terms][`ergmTerm`] that are
+#'   [valued ERGM terms][ergmTerm] that are
 #'   "generalized" from their binary counterparts, with form
 #'   `"sum"` (see previous link for the list) produces logistic
 #'   regression.
