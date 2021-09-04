@@ -28,3 +28,6 @@ positive coefficient induces overdispersion.
 If \code{coupled==FALSE} the two summands above are added as their own
 statistic (each with its own free parameter).
 }
+\seealso{
+\code{\link{ergmTerm}} for index of model terms currently visible to the package.
+}

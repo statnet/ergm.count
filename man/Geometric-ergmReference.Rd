@@ -22,3 +22,6 @@ Conway-Maxwell-Poisson distribution that is geometric when its
 coefficient is \eqn{0} and Poisson when its coefficient is
 \eqn{-1} .
 }
+\seealso{
+\code{\link{ergmReference}} for index of reference distributions currently visible to the package.
+}

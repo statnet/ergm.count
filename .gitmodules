@@ -1,0 +1,3 @@
+[submodule "man-roxygen/ergm"]
+	path = man-roxygen/ergm
+	url = https://github.com/statnet/ergm
