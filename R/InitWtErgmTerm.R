@@ -7,6 +7,27 @@
 #
 #  Copyright 2008-2021 Statnet Commons
 ################################################################################
+
+#' @name CMP-ergmTerm
+#' @title Conway-Maxwell-Poisson Distribution
+#' @description Conway-Maxwell-Poisson Distribution
+#' @details This
+#'   term adds one statistic to the model, of the form
+#'   \eqn{\sum_{i,j}\log(y_{i,j}!)} . This turns a Poisson- or a
+#'   geometric-reference ERGM into a Conway-Maxwell-Poisson-reference
+#'   ERGM, allowing it to represent a broad range of disperson
+#'   values. In particular, combined with a Poisson-reference ERGM, a
+#'   negative coefficient on this term induces underdispersion and a
+#'   positive coefficient induces overdispersion. (This behavior is
+#'   different from 3.1.1, when the negation of this value was used.)
+#'
+#'   Note that its current implementation may not perform well if the
+#'   data are overdispersed relative to geometric.
+#'
+#' @usage
+#' # valued: CMP
+#'
+#' @template ergmTerm-general
 InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
   a <- check.ErgmTerm(nw, arglist,
                       varnames = NULL,
@@ -20,6 +41,28 @@ InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
        minval=0)
 }
 
+#' @name CMB-ergmTerm
+#' @title Conway-Maxwell-Binomial Distribution
+#' @description Conway-Maxwell-Binomial Distribution
+#' @details
+#'   If `couple==TRUE` , this
+#'   term adds one statistic to the model, of the form
+#'   \eqn{\sum_{i,j}\log(y_{i,j}!) + \log(t-y_{i,j}!)} . This turns a Binomial- or a
+#'   discrete-uniform-reference ERGM into a Conway-Maxwell-Binomial-reference
+#'   ERGM, allowing it to represent a broad range of disperson
+#'   values. In particular, combined with a Binomial-reference ERGM, a
+#'   negative coefficient on this term induces underdispersion and a
+#'   positive coefficient induces overdispersion.
+#'
+#'   If `coupled==FALSE` the two summands above are added as their own
+#'   statistic (each with its own free parameter).
+#'
+#' @usage
+#' # valued: CMB(trials, coupled = TRUE)
+#' @param trails model parameter
+#' @param coupled logical
+#'
+#' @template ergmTerm-general
 InitWtErgmTerm.CMB<-function(nw, arglist, response, ...) {
   a <- check.ErgmTerm(nw, arglist,
                       varnames = c("trials", "coupled"),
