@@ -17,3 +17,4 @@ appveyor.yml
 ^codecov\.yml$
 ^README.md$
 ^man-roxygen$
+^submodule$
