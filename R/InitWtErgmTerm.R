@@ -27,7 +27,7 @@
 #' @usage
 #' # valued: CMP
 #'
-#' @template ergm/man-roxygen/ergmTerm-general
+#' @template ergm/ergmTerm-general
 InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
   a <- check.ErgmTerm(nw, arglist,
                       varnames = NULL,
@@ -62,7 +62,7 @@ InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
 #' @param trails model parameter
 #' @param coupled logical
 #'
-#' @template ergm/man-roxygen/ergmTerm-general
+#' @template ergm/ergmTerm-general
 InitWtErgmTerm.CMB<-function(nw, arglist, response, ...) {
   a <- check.ErgmTerm(nw, arglist,
                       varnames = c("trials", "coupled"),

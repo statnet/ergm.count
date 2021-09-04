@@ -52,7 +52,7 @@
 #' @usage
 #' # Poisson
 #'
-#' @template ergm/man-roxygen/ergmReference-general
+#' @template ergm/ergmReference-general
 InitErgmReference.Poisson <- function(lhs.nw, ...){
   list(name="Poisson", init_methods = c("CD","zeros"))
 }
@@ -72,7 +72,7 @@ InitErgmReference.Poisson <- function(lhs.nw, ...){
 #' # Binomial(trials)
 #' @param trails model parameter
 #'
-#' @template ergm/man-roxygen/ergmReference-general
+#' @template ergm/ergmReference-general
 InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
   list(name="Binomial", arguments=list(trials=trials), init_methods = c("CD","zeros"))
 }
@@ -94,7 +94,7 @@ InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
 #' @usage
 #' # Geometric
 #'
-#' @template ergm/man-roxygen/ergmReference-general
+#' @template ergm/ergmReference-general
 InitErgmReference.Geometric <- function(lhs.nw, ...){
   list(name="Geometric", init_methods = c("CD","zeros"))
 }
