@@ -51,6 +51,8 @@
 #'
 #' @usage
 #' # Poisson
+#' @concept discrete
+#' @concept nonnegative
 #'
 #' @template ergmReference-general
 InitErgmReference.Poisson <- function(lhs.nw, ...){
@@ -71,7 +73,9 @@ InitErgmReference.Poisson <- function(lhs.nw, ...){
 #' @usage
 #' # Binomial(trials)
 #' @param trails model parameter
-#'
+#' @concept discrete
+#' @concept finite
+#' @concept nonnegative
 #' @template ergmReference-general
 InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
   list(name="Binomial", arguments=list(trials=trials), init_methods = c("CD","zeros"))
@@ -94,6 +98,8 @@ InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
 #' @usage
 #' # Geometric
 #'
+#' @concept discrete
+#' @concept nonnegative
 #' @template ergmReference-general
 InitErgmReference.Geometric <- function(lhs.nw, ...){
   list(name="Geometric", init_methods = c("CD","zeros"))
