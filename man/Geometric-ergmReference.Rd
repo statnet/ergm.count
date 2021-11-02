@@ -22,3 +22,5 @@ Conway-Maxwell-Poisson distribution that is geometric when its
 coefficient is \eqn{0} and Poisson when its coefficient is
 \eqn{-1} .
 }
+\concept{discrete}
+\concept{nonnegative}

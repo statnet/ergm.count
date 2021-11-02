@@ -22,3 +22,6 @@ Specifies each dyad's baseline distribution to be binomial with
 \code{"sum"} (see previous link for the list) produces logistic
 regression.
 }
+\concept{discrete}
+\concept{finite}
+\concept{nonnegative}

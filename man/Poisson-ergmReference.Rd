@@ -48,3 +48,5 @@ probability \code{p0} , and a random dyad otherwise, as with
 the binary TNT. Currently, \code{p0} defaults to 0.2.
 }
 }
+\concept{discrete}
+\concept{nonnegative}

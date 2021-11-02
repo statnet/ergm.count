@@ -28,3 +28,4 @@ positive coefficient induces overdispersion.
 If \code{coupled==FALSE} the two summands above are added as their own
 statistic (each with its own free parameter).
 }
+\concept{nonnegative}
