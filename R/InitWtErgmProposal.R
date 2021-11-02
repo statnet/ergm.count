@@ -7,10 +7,25 @@
 #
 #  Copyright 2008-2021 Statnet Commons
 ################################################################################
+
+#' @templateVar name Poisson
+#' @aliases InitWtErgmProposal.Poisson
+#' @title TODO
+#' @description TODO
+#' @template ergmProposal
+NULL
+
 InitWtErgmProposal.Poisson <- function(arguments, nw, response) {
   proposal <- list(name = "Poisson", inputs=NULL)
   proposal
 }
+
+#' @templateVar name PoissonTNT
+#' @aliases InitWtErgmProposal.PoissonTNT
+#' @title TODO
+#' @description TODO
+#' @template ergmProposal
+NULL
 
 InitWtErgmProposal.PoissonTNT <- function(arguments, nw, response) {
   if(! "p0" %in% names(arguments)){
@@ -21,6 +36,13 @@ InitWtErgmProposal.PoissonTNT <- function(arguments, nw, response) {
   proposal <- list(name = "PoissonTNT", inputs=as.double(arguments$p0))
   proposal
 }
+
+#' @templateVar name ZIPoisson
+#' @aliases InitWtErgmProposal.ZIPoisson
+#' @title TODO
+#' @description TODO
+#' @template ergmProposal
+NULL
 
 InitWtErgmProposal.ZIPoisson <- function(arguments, nw, response) {
   if(! "p0" %in% names(arguments)){
@@ -36,25 +58,60 @@ InitWtErgmProposal.ZIPoisson <- function(arguments, nw, response) {
   proposal
 }
 
+#' @templateVar name PoissonNonObserved
+#' @aliases InitWtErgmProposal.PoissonNonObserved
+#' @title TODO
+#' @description TODO
+#' @template ergmProposal
+NULL
+
 InitWtErgmProposal.PoissonNonObserved <- function(arguments, nw, response) {
   proposal <- list(name = "PoissonNonObserved", inputs=to_ergm_Cdouble(is.na(nw)))
   proposal
 }
+
+#' @templateVar name Binomial
+#' @aliases InitWtErgmProposal.Binomial
+#' @title TODO
+#' @description TODO
+#' @template ergmProposal
+NULL
 
 InitWtErgmProposal.Binomial <- function(arguments, nw, response) {
   proposal <- list(name = "Binomial", inputs=arguments$reference$arguments$trials)
   proposal
 }
 
+#' @templateVar name BinomialNonObserved
+#' @aliases InitWtErgmProposal.BinomialNonObserved
+#' @title TODO
+#' @description TODO
+#' @template ergmProposal
+NULL
+
 InitWtErgmProposal.BinomialNonObserved <- function(arguments, nw, response) {
   proposal <- list(name = "BinomialNonObserved", inputs=c(arguments$reference$trials,to_ergm_Cdouble(is.na(nw))))
   proposal
 }
 
+#' @templateVar name Geometric
+#' @aliases InitWtErgmProposal.Geometric
+#' @title TODO
+#' @description TODO
+#' @template ergmProposal
+NULL
+
 InitWtErgmProposal.Geometric <- function(arguments, nw, response) {
   proposal <- list(name = "Geometric", inputs=NULL)
   proposal
 }
+
+#' @templateVar name GeometricNonObserved
+#' @aliases InitWtErgmProposal.GeometricNonObserved
+#' @title TODO
+#' @description TODO
+#' @template ergmProposal
+NULL
 
 InitWtErgmProposal.GeometricNonObserved <- function(arguments, nw, response) {
   proposal <- list(name = "GeometricNonObserved", inputs=to_ergm_Cdouble(is.na(nw)))

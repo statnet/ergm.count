@@ -24,3 +24,4 @@ different from 3.1.1, when the negation of this value was used.)
 Note that its current implementation may not perform well if the
 data are overdispersed relative to geometric.
 }
+\concept{nonnegative}
