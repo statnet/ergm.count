@@ -12,7 +12,7 @@
 #' @aliases InitWtErgmProposal.Poisson
 #' @title TODO
 #' @description TODO
-#' @template ergmProposal
+#' @template ergmProposal-general
 NULL
 
 InitWtErgmProposal.Poisson <- function(arguments, nw, response) {
@@ -24,7 +24,7 @@ InitWtErgmProposal.Poisson <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.PoissonTNT
 #' @title TODO
 #' @description TODO
-#' @template ergmProposal
+#' @template ergmProposal-general
 NULL
 
 InitWtErgmProposal.PoissonTNT <- function(arguments, nw, response) {
@@ -41,7 +41,7 @@ InitWtErgmProposal.PoissonTNT <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.ZIPoisson
 #' @title TODO
 #' @description TODO
-#' @template ergmProposal
+#' @template ergmProposal-general
 NULL
 
 InitWtErgmProposal.ZIPoisson <- function(arguments, nw, response) {
@@ -62,7 +62,7 @@ InitWtErgmProposal.ZIPoisson <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.PoissonNonObserved
 #' @title TODO
 #' @description TODO
-#' @template ergmProposal
+#' @template ergmProposal-general
 NULL
 
 InitWtErgmProposal.PoissonNonObserved <- function(arguments, nw, response) {
@@ -74,7 +74,7 @@ InitWtErgmProposal.PoissonNonObserved <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.Binomial
 #' @title TODO
 #' @description TODO
-#' @template ergmProposal
+#' @template ergmProposal-general
 NULL
 
 InitWtErgmProposal.Binomial <- function(arguments, nw, response) {
@@ -86,7 +86,7 @@ InitWtErgmProposal.Binomial <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.BinomialNonObserved
 #' @title TODO
 #' @description TODO
-#' @template ergmProposal
+#' @template ergmProposal-general
 NULL
 
 InitWtErgmProposal.BinomialNonObserved <- function(arguments, nw, response) {
@@ -98,7 +98,7 @@ InitWtErgmProposal.BinomialNonObserved <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.Geometric
 #' @title TODO
 #' @description TODO
-#' @template ergmProposal
+#' @template ergmProposal-general
 NULL
 
 InitWtErgmProposal.Geometric <- function(arguments, nw, response) {
@@ -110,7 +110,7 @@ InitWtErgmProposal.Geometric <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.GeometricNonObserved
 #' @title TODO
 #' @description TODO
-#' @template ergmProposal
+#' @template ergmProposal-general
 NULL
 
 InitWtErgmProposal.GeometricNonObserved <- function(arguments, nw, response) {
