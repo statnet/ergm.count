@@ -8,7 +8,7 @@
 #  Copyright 2008-2021 Statnet Commons
 ################################################################################
 
-#' @name Poisson-ergmReference
+#' @templateVar name Poisson
 #' @title Poisson-reference ERGM
 #' @description Poisson-reference ERGM
 #' @details Specifies each
@@ -59,7 +59,7 @@ InitErgmReference.Poisson <- function(lhs.nw, ...){
   list(name="Poisson", init_methods = c("CD","zeros"))
 }
 
-#' @name Binomial-ergmReference
+#' @templateVar name Binomial
 #' @title Binomial-reference ERGM
 #' @description Binomial-reference ERGM
 #' @details Specifies each dyad's baseline distribution to be binomial with
@@ -81,7 +81,7 @@ InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
   list(name="Binomial", arguments=list(trials=trials), init_methods = c("CD","zeros"))
 }
 
-#' @name Geometric-ergmReference
+#' @templateVar name Geometric
 #' @title Geometric-reference ERGM
 #' @description Geometric-reference ERGM
 #' @details Specifies

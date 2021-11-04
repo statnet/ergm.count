@@ -8,7 +8,7 @@
 #  Copyright 2008-2021 Statnet Commons
 ################################################################################
 
-#' @name CMP-ergmTerm
+#' @templateVar name CMP
 #' @title Conway-Maxwell-Poisson Distribution
 #' @description Conway-Maxwell-Poisson Distribution
 #' @details This
@@ -42,7 +42,7 @@ InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
        minval=0)
 }
 
-#' @name CMB-ergmTerm
+#' @templateVar name CMB
 #' @title Conway-Maxwell-Binomial Distribution
 #' @description Conway-Maxwell-Binomial Distribution
 #' @details
