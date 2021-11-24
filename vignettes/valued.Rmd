@@ -263,7 +263,7 @@ that pools these nominations.
 
 ```{r collapse=TRUE}
 library(ergm.count) # Also loads ergm.
-data(samplk)
+data(samplk1, samplk2, samplk3, package="statnet.data")
 ls()
 as.matrix(samplk1)[1:5,1:5]
 # Create a sociomatrix totaling the nominations.
@@ -360,7 +360,7 @@ aligned with Mr. Hi as red, those with John A. with purple, those
 neutral as green, and those weakly aligned with colors in between.
 
 ```{r collapse = TRUE}
-data(zach)
+data(zach, package="statnet.data")
 zach.ecol <- gray(1 - (zach %e% "contexts")/8)
 zach.vcol <- rainbow(5)[zach %v% "faction.id"+3]
 par(mar=rep(0,4))

@@ -10,7 +10,8 @@ Depends:
     ergm (>= 4.0),
     network (>= 1.15)
 Imports:
-    statnet.common (>= 4.2.0)
+    statnet.common (>= 4.2.0),
+    statnet.data
 LinkingTo:
     ergm
 Description: A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts. See Krivitsky (2012) <doi:10.1214/12-EJS696> and Krivitsky, Hunter, Morris, and Klumb (2021) <arXiv:2106.04997>.
@@ -25,7 +26,8 @@ VignetteBuilder: rmarkdown, knitr
 Remotes:
     github::statnet/network@master,
     github::statnet/statnet.common@master,
-    github::statnet/ergm@master
+    github::statnet/ergm@master,
+    github::statnet/statnet.data@master
 RoxygenNote: 7.1.2
 Roxygen: list(markdown = TRUE)
 Encoding: UTF-8
