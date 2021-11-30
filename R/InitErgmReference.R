@@ -10,8 +10,7 @@
 
 #' @templateVar name Poisson
 #' @title Poisson-reference ERGM
-#' @description Poisson-reference ERGM
-#' @details Specifies each
+#' @description Specifies each
 #'   dyad's baseline distribution to be Poisson with mean 1:
 #'   \eqn{h(y)=\prod_{i,j} 1/y_{i,j}!} , with the support of
 #'   \eqn{y_{i,j}} being natural numbers (and \eqn{0} ). Using
@@ -23,7 +22,7 @@
 #'   coefficient is \eqn{0} and geometric when its coefficient is
 #'   \eqn{1} .
 #'
-#'   Three proposal functions are currently implemented, two of them
+#'  @details Three proposal functions are currently implemented, two of them
 #'   designed to improve mixing for sparse networks. They can can be
 #'   selected via the `MCMC.prop.weights=` control parameter. The
 #'   sparse proposals work by proposing a jump to 0. Both of them take
@@ -61,8 +60,7 @@ InitErgmReference.Poisson <- function(lhs.nw, ...){
 
 #' @templateVar name Binomial
 #' @title Binomial-reference ERGM
-#' @description Binomial-reference ERGM
-#' @details Specifies each dyad's baseline distribution to be binomial with
+#' @description Specifies each dyad's baseline distribution to be binomial with
 #'   `trials` trials and success probability of \eqn{0.5} :
 #'   \eqn{h(y)=\prod_{i,j}{{\mathrm{trials}}\choose{y_{i,j}}}} . Using
 #'   [valued ERGM terms][ergmTerm] that are
@@ -83,8 +81,7 @@ InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
 
 #' @templateVar name Geometric
 #' @title Geometric-reference ERGM
-#' @description Geometric-reference ERGM
-#' @details Specifies
+#' @description Specifies
 #'   each dyad's baseline distribution to be uniform on the natural
 #'   numbers (and \eqn{0} ): \eqn{h(y)=1} . In itself, this
 #'   "distribution" is improper, but in the presence of

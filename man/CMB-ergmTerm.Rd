@@ -13,9 +13,6 @@
 \item{coupled}{logical}
 }
 \description{
-Conway-Maxwell-Binomial Distribution
-}
-\details{
 If \code{couple==TRUE} , this
 term adds one statistic to the model, of the form
 \eqn{\sum_{i,j}\log(y_{i,j}!) + \log(t-y_{i,j}!)} . This turns a Binomial- or a

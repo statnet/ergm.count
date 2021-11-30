@@ -8,11 +8,7 @@
 # valued: CMP
 }
 \description{
-Conway-Maxwell-Poisson Distribution
-}
-\details{
-This
-term adds one statistic to the model, of the form
+This term adds one statistic to the model, of the form
 \eqn{\sum_{i,j}\log(y_{i,j}!)} . This turns a Poisson- or a
 geometric-reference ERGM into a Conway-Maxwell-Poisson-reference
 ERGM, allowing it to represent a broad range of disperson
@@ -20,7 +16,8 @@ values. In particular, combined with a Poisson-reference ERGM, a
 negative coefficient on this term induces underdispersion and a
 positive coefficient induces overdispersion. (This behavior is
 different from 3.1.1, when the negation of this value was used.)
-
+}
+\details{
 Note that its current implementation may not perform well if the
 data are overdispersed relative to geometric.
 }
