@@ -10,9 +10,7 @@
 
 #' @templateVar name CMP
 #' @title Conway-Maxwell-Poisson Distribution
-#' @description Conway-Maxwell-Poisson Distribution
-#' @details This
-#'   term adds one statistic to the model, of the form
+#' @description This term adds one statistic to the model, of the form
 #'   \eqn{\sum_{i,j}\log(y_{i,j}!)} . This turns a Poisson- or a
 #'   geometric-reference ERGM into a Conway-Maxwell-Poisson-reference
 #'   ERGM, allowing it to represent a broad range of disperson
@@ -21,7 +19,7 @@
 #'   positive coefficient induces overdispersion. (This behavior is
 #'   different from 3.1.1, when the negation of this value was used.)
 #'
-#'   Note that its current implementation may not perform well if the
+#' @details Note that its current implementation may not perform well if the
 #'   data are overdispersed relative to geometric.
 #'
 #' @usage
@@ -44,9 +42,7 @@ InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
 
 #' @templateVar name CMB
 #' @title Conway-Maxwell-Binomial Distribution
-#' @description Conway-Maxwell-Binomial Distribution
-#' @details
-#'   If `couple==TRUE` , this
+#' @description If `couple==TRUE` , this
 #'   term adds one statistic to the model, of the form
 #'   \eqn{\sum_{i,j}\log(y_{i,j}!) + \log(t-y_{i,j}!)} . This turns a Binomial- or a
 #'   discrete-uniform-reference ERGM into a Conway-Maxwell-Binomial-reference

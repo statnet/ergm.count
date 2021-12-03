@@ -8,9 +8,6 @@
 # Geometric
 }
 \description{
-Geometric-reference ERGM
-}
-\details{
 Specifies
 each dyad's baseline distribution to be uniform on the natural
 numbers (and \eqn{0} ): \eqn{h(y)=1} . In itself, this

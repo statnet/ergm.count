@@ -11,9 +11,6 @@
 \item{trails}{model parameter}
 }
 \description{
-Binomial-reference ERGM
-}
-\details{
 Specifies each dyad's baseline distribution to be binomial with
 \code{trials} trials and success probability of \eqn{0.5} :
 \eqn{h(y)=\prod_{i,j}{{\mathrm{trials}}\choose{y_{i,j}}}} . Using

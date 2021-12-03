@@ -8,9 +8,6 @@
 # Poisson
 }
 \description{
-Poisson-reference ERGM
-}
-\details{
 Specifies each
 dyad's baseline distribution to be Poisson with mean 1:
 \eqn{h(y)=\prod_{i,j} 1/y_{i,j}!} , with the support of
@@ -23,7 +20,7 @@ Conway-Maxwell-Poisson distribution that is Poisson when its
 coefficient is \eqn{0} and geometric when its coefficient is
 \eqn{1} .
 
-Three proposal functions are currently implemented, two of them
+@details Three proposal functions are currently implemented, two of them
 designed to improve mixing for sparse networks. They can can be
 selected via the \verb{MCMC.prop.weights=} control parameter. The
 sparse proposals work by proposing a jump to 0. Both of them take
