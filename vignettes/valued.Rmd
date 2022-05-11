@@ -701,7 +701,7 @@ model and using degeneracy-prone terms like $k$-star counts.
 `ergm` implements a number of statistics to model it, but the one that seems to work best so far seems to be
 $$\genstat{actor cov.}(\y)=\sum_{i\in N}\frac{1}{n-2}\sum_{j,k\in \dysY_{i}\land j<k}(\sqrt{\yij}-\overline{\sqrt{\y}})(\sqrt{\y_{i,k}}-\overline{\sqrt{\y}}),$$
 essentially a measure of covariance between the $\sqrt{\yij}$s incident
-on the same actor. The term `nodesqrtcovar` implements it.
+on the same actor. The term `nodecovar` implements it.
 
 **Triadic closure** Finally, to generalize the notion of triadic closure, `ergm` implements very flexible `transitiveweights(twopath, combine, affect)` and similar `cyclicalweights` statistics. The transitive weight statistic has the following general form:
 $$\genstat{$\boldsymbol{v}$}(\y)=\sum_{\ijdysY}v_{\text{affect}}\left(\yij,v_{\text{combine}}\left(v_{\text{2-path}}(\y_{i,k},\y_{k,j})_{k\in N\setsub \{i,j\}}\right)\right),$$
@@ -751,7 +751,7 @@ overall, and an effect of difference in faction membership, a model
 that looks like this:
 ```{r collapse=TRUE}
 summary(zach~sum+nonzero+nodefactor("leader")+absdiffcat("faction.id")+
-        nodesqrtcovar(TRUE), response="contexts")
+        nodecovar(center=TRUE,transform="sqrt"), response="contexts")
 ```
 
 A few other notes:
@@ -763,7 +763,7 @@ Now, for the fit and the diagnostics:
 ```{r results="hide", fig.show="hide"}
 zach.pois <- 
   ergm(zach~sum+nonzero+nodefactor("leader")+absdiffcat("faction.id")+
-       nodesqrtcovar(TRUE),
+       nodecovar(center=TRUE,transform="sqrt"),
        response="contexts", reference=~Poisson, verbose=TRUE)
 mcmc.diagnostics(zach.pois)
 ```
