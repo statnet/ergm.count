@@ -19,7 +19,7 @@
 #' Mainly, it implements Poisson, binomial, geometric, and discrete uniform
 #' dyadwise reference measures for valued ERGMs
 #' (documented here in [`ergmReference`]), and provides some count-specific
-#' change statistics (documented in [`ergmTerms`]).
+#' change statistics (documented in [`ergmTerm`]).
 #'
 #' For a complete list of the functions, use \code{library(help="ergm")} and
 #' \code{library(help="ergm.count")} or read the rest of the manual.

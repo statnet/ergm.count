@@ -16,7 +16,7 @@ counts. For a list of functions type \code{help(package='ergm')} and
 Mainly, it implements Poisson, binomial, geometric, and discrete uniform
 dyadwise reference measures for valued ERGMs
 (documented here in \code{\link{ergmReference}}), and provides some count-specific
-change statistics (documented in \code{\link{ergmTerms}}).
+change statistics (documented in \code{\link{ergmTerm}}).
 
 For a complete list of the functions, use \code{library(help="ergm")} and
 \code{library(help="ergm.count")} or read the rest of the manual.
