@@ -12,3 +12,9 @@ TODO
 \if{text}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsText(ergm:::.buildProposalsList(proposal="Poisson"))}}
 \if{latex}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsLatex(ergm:::.buildProposalsList(proposal="Poisson"))}}
 }
+\concept{bipartite}
+\concept{directed}
+\concept{discrete}
+\concept{nonnegative}
+\concept{undirected}
+\concept{valued}

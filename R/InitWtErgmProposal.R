@@ -12,6 +12,14 @@
 #' @aliases InitWtErgmProposal.Poisson
 #' @title TODO
 #' @description TODO
+#'
+#' @concept discrete
+#' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmProposal-general
 NULL
 
@@ -24,6 +32,14 @@ InitWtErgmProposal.Poisson <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.PoissonTNT
 #' @title TODO
 #' @description TODO
+#'
+#' @concept discrete
+#' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmProposal-general
 NULL
 
@@ -41,6 +57,14 @@ InitWtErgmProposal.PoissonTNT <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.ZIPoisson
 #' @title TODO
 #' @description TODO
+#'
+#' @concept discrete
+#' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmProposal-general
 NULL
 
@@ -62,6 +86,14 @@ InitWtErgmProposal.ZIPoisson <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.PoissonNonObserved
 #' @title TODO
 #' @description TODO
+#'
+#' @concept discrete
+#' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmProposal-general
 NULL
 
@@ -74,6 +106,15 @@ InitWtErgmProposal.PoissonNonObserved <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.Binomial
 #' @title TODO
 #' @description TODO
+#'
+#' @concept finite
+#' @concept discrete
+#' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmProposal-general
 NULL
 
@@ -86,6 +127,15 @@ InitWtErgmProposal.Binomial <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.BinomialNonObserved
 #' @title TODO
 #' @description TODO
+#'
+#' @concept finite
+#' @concept discrete
+#' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmProposal-general
 NULL
 
@@ -98,6 +148,14 @@ InitWtErgmProposal.BinomialNonObserved <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.Geometric
 #' @title TODO
 #' @description TODO
+#'
+#' @concept discrete
+#' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmProposal-general
 NULL
 
@@ -110,6 +168,14 @@ InitWtErgmProposal.Geometric <- function(arguments, nw, response) {
 #' @aliases InitWtErgmProposal.GeometricNonObserved
 #' @title TODO
 #' @description TODO
+#'
+#' @concept discrete
+#' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmProposal-general
 NULL
 

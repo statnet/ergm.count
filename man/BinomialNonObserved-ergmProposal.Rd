@@ -12,3 +12,10 @@ TODO
 \if{text}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsText(ergm:::.buildProposalsList(proposal="BinomialNonObserved"))}}
 \if{latex}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsLatex(ergm:::.buildProposalsList(proposal="BinomialNonObserved"))}}
 }
+\concept{bipartite}
+\concept{directed}
+\concept{discrete}
+\concept{finite}
+\concept{nonnegative}
+\concept{undirected}
+\concept{valued}

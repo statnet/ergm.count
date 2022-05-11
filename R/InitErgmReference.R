@@ -52,6 +52,10 @@
 #' # Poisson
 #' @concept discrete
 #' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
 #'
 #' @template ergmReference-general
 InitErgmReference.Poisson <- function(lhs.nw, ...){
@@ -74,6 +78,11 @@ InitErgmReference.Poisson <- function(lhs.nw, ...){
 #' @concept discrete
 #' @concept finite
 #' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmReference-general
 InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
   list(name="Binomial", arguments=list(trials=trials), init_methods = c("CD","zeros"))
@@ -97,6 +106,11 @@ InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
 #'
 #' @concept discrete
 #' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#' @concept bipartite
+#' @concept valued
+#'
 #' @template ergmReference-general
 InitErgmReference.Geometric <- function(lhs.nw, ...){
   list(name="Geometric", init_methods = c("CD","zeros"))

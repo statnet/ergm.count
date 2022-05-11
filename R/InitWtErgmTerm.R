@@ -26,6 +26,9 @@
 #' # valued: CMP
 #'
 #' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#'
 #' @template ergmTerm-general
 InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
   a <- check.ErgmTerm(nw, arglist,
@@ -60,6 +63,9 @@ InitWtErgmTerm.CMP<-function(nw, arglist, response, ...) {
 #' @param coupled logical
 #'
 #' @concept nonnegative
+#' @concept directed
+#' @concept undirected
+#'
 #' @template ergmTerm-general
 InitWtErgmTerm.CMB<-function(nw, arglist, response, ...) {
   a <- check.ErgmTerm(nw, arglist,

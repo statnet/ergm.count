@@ -19,6 +19,10 @@ Specifies each dyad's baseline distribution to be binomial with
 \code{"sum"} (see previous link for the list) produces logistic
 regression.
 }
+\concept{bipartite}
+\concept{directed}
 \concept{discrete}
 \concept{finite}
 \concept{nonnegative}
+\concept{undirected}
+\concept{valued}
