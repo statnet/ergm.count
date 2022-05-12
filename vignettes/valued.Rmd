@@ -764,7 +764,7 @@ Now, for the fit and the diagnostics:
 zach.pois <- 
   ergm(zach~sum+nonzero+nodefactor("leader")+absdiffcat("faction.id")+
        nodecovar(center=TRUE,transform="sqrt"),
-       response="contexts", reference=~Poisson, verbose=TRUE)
+       response="contexts", reference=~Poisson, verbose=TRUE, control=snctrl(seed=0))
 mcmc.diagnostics(zach.pois)
 ```
 
