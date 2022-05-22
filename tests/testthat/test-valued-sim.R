@@ -37,3 +37,10 @@ test_that("Binomial-reference ERGM with mean 5 trials and probability of success
   test <- approx.hotelling.diff.test(s/6,mu0=2)
   expect_gt(test$p.value, 0.001)
 })
+
+test_that("Poisson-reference ERGM with mean 2 and constraints, TNT proposal", {
+  set.seed(0)
+  s <- simulate(testnet3d~sum, nsim=1000, reference=~Poisson, response="w", constraints=~egocentric(I(c(FALSE,FALSE,TRUE))), coef=log(2), output="stats", control=control.simulate.formula(MCMC.prop.args=list(p0=0.5)))
+  test <- approx.hotelling.diff.test(s/2,mu0=2)
+  expect_gt(test$p.value, 0.001)
+})

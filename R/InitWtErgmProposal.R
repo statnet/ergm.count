@@ -49,7 +49,7 @@ InitWtErgmProposal.PoissonTNT <- function(arguments, nw, response) {
   }else if(!is.numeric(arguments$p0) || length(arguments$p0)!=1 || arguments$p0<0 || arguments$p0 >=1) {
     stop(paste("Invalid jump-to-0 argument to the TNT Poisson proposal: must be either omited or a single number in the interval [0,1)."))
   }
-  proposal <- list(name = "PoissonTNT", inputs=as.double(arguments$p0))
+  proposal <- list(name = "PoissonTNT", inputs=as.double(arguments$p0), dyadgen = ergm_dyadgen_select(arguments, nw))
   proposal
 }
 

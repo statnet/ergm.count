@@ -22,7 +22,7 @@
 
 .RegisterProposals <- function(){
   ergm_proposal_table("c", "Poisson", "",  0, "random", "Poisson")
-  ergm_proposal_table("c", "Poisson", "&sparse",  1, "TNT", "PoissonTNT")
+  ergm_proposal_table("c", "Poisson", "&sparse|.dyads",  1, "TNT", "PoissonTNT")
   ergm_proposal_table("c", "Poisson", "&sparse",  0, "0inflated", "ZIPoisson")
   ergm_proposal_table("c", "Poisson", "observed",  0, "random", "PoissonNonObserved")
 

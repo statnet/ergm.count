@@ -7,12 +7,11 @@
  *
  *  Copyright 2008-2021 Statnet Commons
  */
-#include "wtMHproposals.h"
 
-/* Shorthand. */
-#define Mtail (MHp->toggletail)
-#define Mhead (MHp->togglehead)
-#define Mweight (MHp->toggleweight)
+#include "ergm_wtMHproposal.h"
+#include "ergm_dyadgen.h"
+#include "ergm_MHstorage.h"
+
 
 /*********************
  WtMH_P_FN(MH_Poisson
@@ -77,54 +76,58 @@ WtMH_P_FN(MH_ZIPoisson){
 }
 
 /*********************
- WtMH_P_FN(MH_ZIPoisson
+PoissonTNT
 
- MH algorithm for Poisson-reference ERGM with zero-inflating terms.
- Ocassionally proposes jumps to 0.
+MH algorithm for Poisson-reference ERGM with zero-inflating terms. Uses TNT weighting.
 *********************/
-WtMH_P_FN(MH_PoissonTNT){  
-  Edge nedges=nwp->nedges;
-  double edgestate;
-  static double comp, odds;
-  static Dyad ndyads;
-  const double fudge = 0.5; // Mostly comes in when proposing from 0.
-  
-  if(MHp->ntoggles == 0) { // Initialize Poisson 
-    MHp->ntoggles=1;
-    comp = MHp->inputs[0];
-    odds = comp/(1-comp);
-    ndyads = DYADCOUNT(nwp->nnodes, nwp->bipartite, nwp->directed_flag);
-    return;
-  }
+WtMH_I_FN(Mi_PoissonTNT){
+  MH_STORAGE = DyadGenInitializeR(MHp->R, nwp, TRUE);
+  MHp->ntoggles = ((DyadGen *) MH_STORAGE)->ndyads!=0 ? 1 : MH_FAILED;
+}
 
-  if (unif_rand() < comp && nedges > 0) { /* Select a tie at random */
-    WtGetRandEdge(Mtail, Mhead, &edgestate, nwp);
+
+WtMH_P_FN(Mp_PoissonTNT){
+  const double fudge = 0.5; // Mostly comes in when proposing from 0.
+  DyadGen *gen = (DyadGen *) MH_STORAGE;
+
+  double P = MHp->inputs[0], Q = 1-P;
+  double DP = P*gen->ndyads, DO = DP/Q, edgestate;
+  Edge E = DyadGenEdgecount(gen);
+
+  if (unif_rand() < P && E > 0) { /* Select a tie at random from the network of eligibles */
+    DyadGenRandWtEdge(Mtail, Mhead, &edgestate, gen);
     Mweight[0] = 0;
   }else{ /* Select a dyad at random */
-    GetRandDyad(Mtail, Mhead, nwp);
-    edgestate = WtGetEdge(Mtail[0],Mhead[0],nwp);
+    DyadGenRandDyad(Mtail, Mhead, gen);
+    edgestate = WtGetEdge(Mtail[0], Mhead[0], nwp);
     do{
       Mweight[0] = rpois(edgestate + fudge);
-    }while(Mweight[0]==edgestate);
+    }while(Mweight[0] == edgestate);
   }
 
   // Log-probability of a Poisson jump from from to to, given that we didn't stay put:
 #define ldpoisj(from,to) (dpois(to, from+fudge, 1) - log1p(-dpois(from, from+fudge, 0)))
 #define dpoisj(from,to) exp(dpois(to, from+fudge, 1) - log1p(-dpois(from, from+fudge, 0)))
-  
+
   if(edgestate==0){
-    MHp->logratio += log(dpoisj(Mweight[0],edgestate)+odds*ndyads/(nedges+1)) - ldpoisj(edgestate,Mweight[0]) + (nedges==0 ? log(1-comp) : 0);
+    MHp->logratio += log(dpoisj(Mweight[0],edgestate)+DO/(E+1)) - ldpoisj(edgestate,Mweight[0]) + (E==0 ? log(Q) : 0);
   }else if(Mweight[0]==0){
-    MHp->logratio += ldpoisj(Mweight[0],edgestate) - log(dpoisj(edgestate,Mweight[0])+odds*ndyads/nedges) - (nedges==1 ? log(1-comp) : 0);
+    MHp->logratio += ldpoisj(Mweight[0],edgestate) - log(dpoisj(edgestate,Mweight[0])+DO/E) - (E==1 ? log(Q) : 0);
   }else{
     MHp->logratio += ldpoisj(Mweight[0],edgestate) - ldpoisj(edgestate,Mweight[0]);
   }
   // h(y)
   MHp->logratio += -lgamma1p(Mweight[0]) - -lgamma1p(edgestate);
-  
+
 #undef ldpoisj
 #undef dpoisj
 }
+
+WtMH_F_FN(Mf_PoissonTNT){
+  DyadGenDestroy(MH_STORAGE);
+  MH_STORAGE = NULL;
+}
+
 
   
 /*********************
