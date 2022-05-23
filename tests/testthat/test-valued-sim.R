@@ -1,4 +1,3 @@
-library(ergm.count)
 testnet3d <- network.initialize(3, directed=TRUE) # 6 dyads
 testnet3u <- network.initialize(3, directed=FALSE) # 3 dyads
 
