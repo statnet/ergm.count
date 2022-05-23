@@ -64,6 +64,46 @@
 
 %% }
 
+
+\section{Changes in version 4.1.0}{
+
+  \subsection{NEW FEATURES}{
+    \itemize{
+      \item{
+        Default proposals for \code{\link[=Binomial-ergmReference]{Binomial}}, \code{\link[=Poisson-ergmReference]{Poisson}}, \code{\link[=Geometric-ergmReference]{Geometric}}, and also \code{\link[=DiscUnif-ergmReference]{DiscUnif}} now implement the full DyadGen API for arbitrary dyad-level constraint combinations and TNT proposal weighting.
+      }
+    }
+  }
+
+
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item{
+        Vignette's run time is now more predictable.
+      }
+      \item{
+        Miscellaneous documentation fixes.
+      }
+    }
+  }
+
+
+  \subsection{OTHER USER-VISIBLE CHANGES}{
+    \itemize{
+      \item{
+        Term and termalike documentation has been ported to the new documentation system.
+      }
+      \item{
+        Package tests now use \pkg{testthat}.
+      }
+      \item{
+        Proposals \code{Poisson}, \code{PoissonTNT}, \code{PoissonNonObserved}, \code{Geometric}, \code{GeometricTNT}, \code{Binomial}, and \code{BinomialTNT} have been removed in favour of the more universal \code{\link[=Disc-ergmProposal]{Disc}} and \code{\link[=DiscTNT-ergmProposal]{DiscTNT}} for random and TNT weights.
+      }
+    }
+  }
+}
+
+
 \section{Changes in version 4.0.2}{
 
   \subsection{NEW FEATURES}{
