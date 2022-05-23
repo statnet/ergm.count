@@ -19,6 +19,9 @@ Specifies each dyad's baseline distribution to be binomial with
 \code{"sum"} (see previous link for the list) produces logistic
 regression.
 }
+\seealso{
+\code{\link{ergmReference}} for index of reference distributions currently visible to the package.
+}
 \concept{bipartite}
 \concept{directed}
 \concept{discrete}

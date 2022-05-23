@@ -45,6 +45,9 @@ probability \code{p0} , and a random dyad otherwise, as with
 the binary TNT. Currently, \code{p0} defaults to 0.2.
 }
 }
+\seealso{
+\code{\link{ergmReference}} for index of reference distributions currently visible to the package.
+}
 \concept{bipartite}
 \concept{directed}
 \concept{discrete}
