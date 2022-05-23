@@ -181,6 +181,7 @@ WtMH_P_FN(Mp_DiscTNT){
   double edgestate;
   if (unif_rand() < P && E > 0) { /* Select a tie at random from the network of eligibles */
     DyadGenRandWtEdge(Mtail, Mhead, &edgestate, gen);
+    edgestate = WtGetEdge(Mtail[0], Mhead[0], nwp);
     Mweight[0] = 0;
   }else{ /* Select a dyad at random */
     DyadGenRandDyad(Mtail, Mhead, gen);
