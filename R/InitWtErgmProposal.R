@@ -105,18 +105,3 @@ InitWtErgmProposal.ZIPoisson <- function(arguments, nw, response) {
   proposal <- list(name = "ZIPoisson", inputs=as.double(arguments$p0))
   proposal
 }
-
-#' @templateVar name PoissonNonObserved
-#' @aliases InitWtErgmProposal.PoissonNonObserved
-#' @title TODO
-#' @description TODO
-#'
-#' @concept discrete
-#' @concept nonnegative
-#' @concept directed
-#' @concept undirected
-#' @concept bipartite
-#' @concept valued
-#'
-#' @template ergmProposal-general
-NULL
