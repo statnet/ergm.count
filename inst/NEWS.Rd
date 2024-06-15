@@ -65,6 +65,20 @@
 %% }
 
 
+
+\section{Changes in version 4.1.2}{
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item{
+        \item A number of fixes and corrections to package documentation.
+      }
+    }
+  }
+}
+
+
+
+
 \section{Changes in version 4.1.1}{
 
   \subsection{NEW FEATURES}{
