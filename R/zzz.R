@@ -9,6 +9,7 @@
 ################################################################################
 #' @import statnet.common network ergm
 #' @useDynLib ergm.count
+#' @importFrom Rdpack reprompt
 .onAttach <- function(libname, pkgname){
   sm <- statnetStartupMessage("ergm.count",c("statnet"),FALSE)
   if(!is.null(sm)){

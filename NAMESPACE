@@ -3,4 +3,5 @@
 import(ergm)
 import(network)
 import(statnet.common)
+importFrom(Rdpack,reprompt)
 useDynLib(ergm.count)
