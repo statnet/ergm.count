@@ -21,6 +21,8 @@ coefficient is \eqn{0} and Poisson when its coefficient is
 }
 \seealso{
 \code{\link{ergmReference}} for index of reference distributions currently visible to the package.
+
+\Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmReference", "Geometric", "subsection")}
 }
 \concept{bipartite}
 \concept{directed}

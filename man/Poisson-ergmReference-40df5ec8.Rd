@@ -47,6 +47,8 @@ the binary TNT. Currently, \code{p0} defaults to 0.2.
 }
 \seealso{
 \code{\link{ergmReference}} for index of reference distributions currently visible to the package.
+
+\Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmReference", "Poisson", "subsection")}
 }
 \concept{bipartite}
 \concept{directed}

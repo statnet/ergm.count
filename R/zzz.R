@@ -5,10 +5,11 @@
 #  open source, and has the attribution requirements (GPL Section 7) at
 #  https://statnet.org/attribution .
 #
-#  Copyright 2008-2022 Statnet Commons
+#  Copyright 2008-2024 Statnet Commons
 ################################################################################
 #' @import statnet.common network ergm
 #' @useDynLib ergm.count
+#' @importFrom Rdpack reprompt
 .onAttach <- function(libname, pkgname){
   sm <- statnetStartupMessage("ergm.count",c("statnet"),FALSE)
   if(!is.null(sm)){

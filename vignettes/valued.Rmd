@@ -293,7 +293,7 @@ samplk.tot.el <- as.matrix(samplk.tot, attrname="nominations",
 samplk.tot.el[1:5,]
 # and an initial empty network.
 samplk.tot2 <- samplk1 # Copy samplk1
-delete.edges(samplk.tot2, seq_along(samplk.tot2$mel)) # Empty it out
+samplk.tot2[,] <- 0 # Empty it out
 samplk.tot2  #We could also have used network.initialize(18)
 
 samplk.tot2[samplk.tot.el[,1:2], names.eval="nominations", add.edges=TRUE] <- 
@@ -556,7 +556,7 @@ default. Also, note that for valued ERGMs, the "intercept"
 term is `sum`, not `edges`.
 
 ```{r eval=FALSE}
-help("ergm-terms")
+?ergmTerm
 ```
 
 has the complete list across all the loaded packages. In particular, the one in package `ergm` has each term be tagged with whether it's binary or valued.
@@ -753,11 +753,6 @@ that looks like this:
 summary(zach~sum+nonzero+nodefactor("leader")+absdiffcat("faction.id")+
         nodecovar(center=TRUE,transform="sqrt"), response="contexts")
 ```
-
-A few other notes:
-
-* By default, Poisson-reference ERGMs use a variant of the TNT proposal to make sampling from sparse (or 0-inflated) networks more efficient. There is a tuning parameter
-  `MCMC.prop.args=list(p0=...)` that can be used to control how much "zero-inflation" there is. It has a sensible default.
 
 Now, for the fit and the diagnostics:
 ```{r results="hide", fig.show="hide"}

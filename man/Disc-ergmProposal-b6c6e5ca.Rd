@@ -15,6 +15,10 @@ This proposal implements \link{Poisson-ergmReference},
 \if{latex}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsLatex(ergm:::.buildProposalsList(proposal="Disc"))}}
 }
 \seealso{
+\code{\link{ergmProposal}} for index of proposals currently visible to the package.
+
+\Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmProposal", "Disc", "subsection")}
+
 \link{DiscTNT-ergmProposal}
 }
 \concept{bipartite}
@@ -22,3 +26,4 @@ This proposal implements \link{Poisson-ergmReference},
 \concept{discrete}
 \concept{undirected}
 \concept{valued}
+\keyword{internal}

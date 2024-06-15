@@ -5,7 +5,7 @@
 #  open source, and has the attribution requirements (GPL Section 7) at
 #  https://statnet.org/attribution .
 #
-#  Copyright 2008-2022 Statnet Commons
+#  Copyright 2008-2024 Statnet Commons
 ################################################################################
 testnet3d <- network.initialize(3, directed=TRUE) # 6 dyads
 testnet3u <- network.initialize(3, directed=FALSE) # 3 dyads

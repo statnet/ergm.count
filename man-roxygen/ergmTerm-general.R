@@ -5,7 +5,11 @@
 #  open source, and has the attribution requirements (GPL Section 7) at
 #  https://statnet.org/attribution .
 #
-#  Copyright 2008-2022 Statnet Commons
+#  Copyright 2008-2024 Statnet Commons
 ################################################################################
+#' <% name <- if(startsWith(name, "'")) substr(name, 2, 1000) else name %>
 #' @name <%= name %>-ergmTerm
-
+#' @rdname <%= ergm:::.term.rdname("ergmTerm", name) %>
+#' @seealso [`ergmTerm`] for index of model terms currently visible to the package.
+#'
+#' \Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmTerm", "<%= name %>", "subsection")}
