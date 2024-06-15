@@ -17,6 +17,10 @@ dyad-level constraints.
 \if{latex}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsLatex(ergm:::.buildProposalsList(proposal="DiscTNT"))}}
 }
 \seealso{
+\code{\link{ergmProposal}} for index of proposals currently visible to the package.
+
+\Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmProposal", "DiscTNT", "subsection")}
+
 \link{TNT-ergmProposal}
 }
 \concept{bipartite}
@@ -24,3 +28,4 @@ dyad-level constraints.
 \concept{discrete}
 \concept{undirected}
 \concept{valued}
+\keyword{internal}

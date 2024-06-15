@@ -21,6 +21,11 @@ different from 3.1.1, when the negation of this value was used.)
 Note that its current implementation may not perform well if the
 data are overdispersed relative to geometric.
 }
+\seealso{
+\code{\link{ergmTerm}} for index of model terms currently visible to the package.
+
+\Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmTerm", "CMP", "subsection")}
+}
 \concept{directed}
 \concept{nonnegative}
 \concept{undirected}
