@@ -58,7 +58,7 @@ bibentry(bibtype = "Article",
 
 bibentry("Article",
          title = "Exponential-family random graph models for valued networks",
-         author = personList(person("Pavel N.", "Krivitsky")),
+         author = c(person("Pavel N.", "Krivitsky")),
          doi = "10.1214/12-EJS696",
          journal = "Electronic Journal of Statistics", year = 2012,
          volume = 6, pages = "1100-1128")
