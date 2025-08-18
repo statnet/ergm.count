@@ -7,7 +7,7 @@
 \description{
 This proposal implements \link{Poisson-ergmReference},
 \link{Geometric-ergmReference}, \link{Binomial-ergmReference}, and
-\link{DiscUnif-ergmReference} with arbitrary dyad level constraints.
+\link[ergm:DiscUnif-ergmReference-94b67a89]{DiscUnif-ergmReference} with arbitrary dyad level constraints.
 }
 \details{
 \if{html}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsHtml(ergm:::.buildProposalsList(proposal="Disc"))}}
@@ -15,7 +15,7 @@ This proposal implements \link{Poisson-ergmReference},
 \if{latex}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsLatex(ergm:::.buildProposalsList(proposal="Disc"))}}
 }
 \seealso{
-\code{\link{ergmProposal}} for index of proposals currently visible to the package.
+\code{\link[ergm:ergmProposal]{ergmProposal}} for index of proposals currently visible to the package.
 
 \Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmProposal", "Disc", "subsection")}
 

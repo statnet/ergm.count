@@ -12,15 +12,15 @@ Specifies
 each dyad's baseline distribution to be uniform on the natural
 numbers (and \eqn{0} ): \eqn{h(y)=1} . In itself, this
 "distribution" is improper, but in the presence of
-\code{\link[=sum-ergmTerm]{sum}} , a geometric
+\code{\link[ergm:sum-ergmTerm-304f882f]{sum}} , a geometric
 distribution is induced. Using \code{\link[=CMP-ergmTerm]{CMP}} (in addition to
-\code{\link[=sum-ergmTerm]{sum}} ) induces a
+\code{\link[ergm:sum-ergmTerm-304f882f]{sum}} ) induces a
 Conway-Maxwell-Poisson distribution that is geometric when its
 coefficient is \eqn{0} and Poisson when its coefficient is
 \eqn{-1} .
 }
 \seealso{
-\code{\link{ergmReference}} for index of reference distributions currently visible to the package.
+\code{\link[ergm:ergmReference]{ergmReference}} for index of reference distributions currently visible to the package.
 
 \Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmReference", "Geometric", "subsection")}
 }

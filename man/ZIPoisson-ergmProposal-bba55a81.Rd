@@ -13,7 +13,7 @@ TODO
 \if{latex}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsLatex(ergm:::.buildProposalsList(proposal="ZIPoisson"))}}
 }
 \seealso{
-\code{\link{ergmProposal}} for index of proposals currently visible to the package.
+\code{\link[ergm:ergmProposal]{ergmProposal}} for index of proposals currently visible to the package.
 
 \Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmProposal", "ZIPoisson", "subsection")}
 }

@@ -15,8 +15,8 @@ counts \insertCite{Kr12e}{ergm.count}.
 \details{
 Mainly, it implements Poisson, binomial, geometric, and discrete
 uniform dyadwise reference measures for valued ERGMs (documented
-here in \code{\link{ergmReference}}), and provides some count-specific change
-statistics (documented in \code{\link{ergmTerm}})
+here in \code{\link[ergm:ergmReference]{ergmReference}}), and provides some count-specific change
+statistics (documented in \code{\link[ergm:ergmTerm]{ergmTerm}})
 \insertCite{Kr12e,KrHu23e}{ergm.count}, including
 \code{\link[=CMP-ergmTerm]{CMP}} for the Conway--Maxwell--Poisson Distribution
 \insertCite{ShMi05u}{ergm.count}.
@@ -43,7 +43,7 @@ newsgroup, references and links to further resources are provided there.
 
 Poisson- and geometric-reference ERGMs have an unbouded sample space. This
 means that the parameter space may be constrained in complex ways that
-depend on the terms used in the model. At this time \code{\link{ergm}} has
+depend on the terms used in the model. At this time \code{\link[ergm:ergm]{ergm}} has
 no way to detect when a parameter configuration had strayed outside of the
 parameter space, but it may be noticeable on a runtime trace plot (activated
 via \code{MCMC.runtime.traceplot} control parameter), when the simulated
@@ -51,7 +51,7 @@ values keep climbing upwards. (See \insertCite{Kr12e;textual}{ergm.count} for a 
 discussion.)
 
 A possible remedy if this appears to occur is to try lowering the
-\code{\link[=control.ergm]{control.ergm()}} parameter \code{MCMLE.steplength}.
+\code{\link[ergm:control.ergm]{control.ergm()}} parameter \code{MCMLE.steplength}.
 }
 }
 
@@ -59,7 +59,7 @@ A possible remedy if this appears to occur is to try lowering the
 \insertAllCited{}
 }
 \seealso{
-\code{\link{ergmTerm}}, \code{\link{ergmReference}}
+\code{\link[ergm:ergmTerm]{ergmTerm}}, \code{\link[ergm:ergmReference]{ergmReference}}
 }
 \author{
 \strong{Maintainer}: Pavel N. Krivitsky \email{pavel@statnet.org} (\href{https://orcid.org/0000-0002-9101-3362}{ORCID})
