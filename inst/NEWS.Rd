@@ -66,6 +66,18 @@
 
 
 
+\section{Changes in version 4.1.3}{
+  \subsection{BUG FIXES}{
+    \itemize{
+      \item{
+        \item Documentation formatting fixes.
+      }
+    }
+  }
+}
+
+
+
 \section{Changes in version 4.1.2}{
   \subsection{BUG FIXES}{
     \itemize{
@@ -75,7 +87,6 @@
     }
   }
 }
-
 
 
 
