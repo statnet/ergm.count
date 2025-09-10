@@ -70,7 +70,10 @@
   \subsection{BUG FIXES}{
     \itemize{
       \item{
-        \item Documentation formatting fixes.
+        Documentation formatting fixes.
+      }
+      \item{
+        Broken link in dataset documentation fixed.
       }
     }
   }
@@ -82,7 +85,7 @@
   \subsection{BUG FIXES}{
     \itemize{
       \item{
-        \item A number of fixes and corrections to package documentation.
+        A number of fixes and corrections to package documentation.
       }
     }
   }
