@@ -14,6 +14,12 @@ appveyor.yml
 .gdb_history
 ^revdep$
 ^.github$
-^codecov\.yml$
-^README.md$
 ^man-roxygen$
+^codecov\.yml$
+^vignettes/.*_cache$
+^vignettes/.*_files$
+^README.md$
+_snaps
+^src/.*\.s?o$
+^\.vscode/
+.*\.code-workspace
