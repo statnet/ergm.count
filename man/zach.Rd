@@ -23,8 +23,8 @@ Zachary, WW (1977). An Information Flow Model for Conflict and
 Fission in Small Groups. \emph{Journal of Anthropological Research}, 33(4),
 452-473.
 
-Sociomatrix in machine-readable format was retrieved from
-\url{http://vlado.fmf.uni-lj.si/pub/networks/data/ucinet/ucidata.htm}.
+Sociomatrix in machine-readable format can be retrieved from
+\url{https://github.com/bavla/Nets/blob/master/data/Pajek/ucinet/README.md}.
 }
 \description{
 Zachary (1977) reported observations of social relations in a university
