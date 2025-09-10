@@ -22,7 +22,7 @@ Note that its current implementation may not perform well if the
 data are overdispersed relative to geometric.
 }
 \seealso{
-\code{\link{ergmTerm}} for index of model terms currently visible to the package.
+\code{\link[ergm:ergmTerm]{ergmTerm}} for index of model terms currently visible to the package.
 
 \Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmTerm", "CMP", "subsection")}
 }

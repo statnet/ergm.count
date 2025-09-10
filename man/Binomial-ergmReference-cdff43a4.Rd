@@ -14,13 +14,13 @@
 Specifies each dyad's baseline distribution to be binomial with
 \code{trials} trials and success probability of \eqn{0.5} :
 \eqn{h(y)=\prod_{i,j}{{\mathrm{trials}}\choose{y_{i,j}}}} . Using
-\link[=ergmTerm]{valued ERGM terms} that are
+\link[ergm:ergmTerm]{valued ERGM terms} that are
 "generalized" from their binary counterparts, with form
 \code{"sum"} (see previous link for the list) produces logistic
 regression.
 }
 \seealso{
-\code{\link{ergmReference}} for index of reference distributions currently visible to the package.
+\code{\link[ergm:ergmReference]{ergmReference}} for index of reference distributions currently visible to the package.
 
 \Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmReference", "Binomial", "subsection")}
 }

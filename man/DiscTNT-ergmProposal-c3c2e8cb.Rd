@@ -7,7 +7,7 @@
 \description{
 This proposal implements \link{Poisson-ergmReference},
 \link{Geometric-ergmReference}, \link{Binomial-ergmReference}, and
-\link{DiscUnif-ergmReference} when the range of values includes 0,
+\link[ergm:DiscUnif-ergmReference-94b67a89]{DiscUnif-ergmReference} when the range of values includes 0,
 falling back to \link{Disc-ergmProposal} otherwise, all with arbitrary
 dyad-level constraints.
 }
@@ -17,11 +17,11 @@ dyad-level constraints.
 \if{latex}{\Sexpr[results=rd,stage=render]{ergm:::.formatProposalsLatex(ergm:::.buildProposalsList(proposal="DiscTNT"))}}
 }
 \seealso{
-\code{\link{ergmProposal}} for index of proposals currently visible to the package.
+\code{\link[ergm:ergmProposal]{ergmProposal}} for index of proposals currently visible to the package.
 
 \Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmProposal", "DiscTNT", "subsection")}
 
-\link{TNT-ergmProposal}
+\link[ergm:TNT-ergmProposal-6a5bc996]{TNT-ergmProposal}
 }
 \concept{bipartite}
 \concept{directed}

@@ -12,7 +12,7 @@ Specifies each
 dyad's baseline distribution to be Poisson with mean 1:
 \eqn{h(y)=\prod_{i,j} 1/y_{i,j}!} , with the support of
 \eqn{y_{i,j}} being natural numbers (and \eqn{0} ). Using
-\link[=ergmTerm]{valued ERGM terms} that are
+\link[ergm:ergmTerm]{valued ERGM terms} that are
 "generalized" from their binary counterparts, with form
 \code{"sum"} (see previous link for the list) produces Poisson
 regression. Using \code{\link[=CMP-ergmTerm]{CMP}} induces a
@@ -46,7 +46,7 @@ the binary TNT. Currently, \code{p0} defaults to 0.2.
 }
 }
 \seealso{
-\code{\link{ergmReference}} for index of reference distributions currently visible to the package.
+\code{\link[ergm:ergmReference]{ergmReference}} for index of reference distributions currently visible to the package.
 
 \Sexpr[results=rd,stage=render]{ergm:::.formatTermKeywords("ergmReference", "Poisson", "subsection")}
 }

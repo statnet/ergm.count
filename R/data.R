@@ -1,11 +1,11 @@
-#  File R/data.R in package ergm.count, part of the
-#  Statnet suite of packages for network analysis, https://statnet.org .
+#  File R/data.R in package ergm.count, part of the Statnet suite of packages
+#  for network analysis, https://statnet.org .
 #
-#  This software is distributed under the GPL-3 license.  It is free,
-#  open source, and has the attribution requirements (GPL Section 7) at
+#  This software is distributed under the GPL-3 license.  It is free, open
+#  source, and has the attribution requirements (GPL Section 7) at
 #  https://statnet.org/attribution .
 #
-#  Copyright 2008-2024 Statnet Commons
+#  Copyright 2008-2025 Statnet Commons
 ################################################################################
 #' Karate club social network of Zachary (1977)
 #'
@@ -62,15 +62,16 @@
 #' data(zach)
 #'
 #' oldpal <- palette()
-#' palette(gray((1:8)/8))
-#' plot(zach, vertex.col="role", displaylabels=TRUE, edge.col="contexts")
+#' palette(gray((1:8) / 8))
+#' plot(zach, vertex.col = "role", displaylabels = TRUE, edge.col = "contexts")
 #' palette(oldpal)
 #'
 #' \donttest{
 #' # Fit a binomial-reference ERGM.
 #'
-#' zach.fit1 <- ergm(zach~nonzero+sum+nodefactor("role",base=2)+absdiffcat("faction.id"),
-#'                   response="contexts", reference=~Binomial(8))
+#' zach.fit1 <- ergm(zach ~ nonzero + sum + nodefactor("role", levels = -2) +
+#'                     absdiffcat("faction.id"),
+#'                   response = "contexts", reference = ~Binomial(8))
 #'
 #' mcmc.diagnostics(zach.fit1)
 #'
@@ -78,9 +79,10 @@
 #' }
 #' \dontrun{
 #' # This is much slower.
-#' zach.fit2 <- ergm(zach~nonzero+sum+nodefactor("role",base=2)+transitiveties,
-#'                   response="contexts", reference=~Binomial(8),
-#'                   eval.loglik=FALSE)
+#' zach.fit2 <- ergm(zach ~ nonzero + sum + nodefactor("role", levels = -2) +
+#'                     transitiveties,
+#'                   response = "contexts", reference = ~Binomial(8),
+#'                   eval.loglik = FALSE)
 #'
 #' mcmc.diagnostics(zach.fit2)
 #'
