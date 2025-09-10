@@ -25,8 +25,8 @@ original authors as described in \code{citation(package="ergm.count")}.
 
 All programs derived from this package must cite it.
 
-This package contains functions specific to using \code{\link{ergm}} to
-model networks whose dyad values are counts. Examples include counts of
+This package contains functions specific to using \code{\link[ergm:ergm]{ergm()}} to model
+networks whose dyad values are counts. Examples include counts of
 conversations, messages, and other interactions.
 
 For detailed information on how to download and install the software, go to
