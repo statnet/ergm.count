@@ -8,23 +8,23 @@ Authors@R: c(
            person(c("David", "R."), "Hunter", role=c("ctb"), email="dhunter@stat.psu.edu"),
            person("Joyce", "Cheng", role=c("ctb"), email="joyce.cheng@student.unsw.edu.au"))
 Depends:
-    ergm (>= 4.2.2),
-    network (>= 1.15)
+    ergm (>= 4.10.1),
+    network (>= 1.19.0)
 Imports:
-    statnet.common (>= 4.2.0),
-    Rdpack (>= 2.4)
+    statnet.common (>= 4.12.0),
+    Rdpack (>= 2.6.4)
 LinkingTo:
     ergm
+Suggests:
+    covr
+    knitr
+    rmarkdown
+    testthat
 RdMacros: Rdpack
 Description: A set of extensions for the 'ergm' package to fit weighted networks whose edge weights are counts. See Krivitsky (2012) <doi:10.1214/12-EJS696> and Krivitsky, Hunter, Morris, and Klumb (2023) <doi:10.18637/jss.v105.i06>.
 License: GPL-3 + file LICENSE
 URL: https://statnet.org
 BugReports: https://github.com/statnet/ergm.count/issues
-Suggests:
-    covr,
-    knitr,
-    rmarkdown,
-    testthat (>= 3.0.0)
 VignetteBuilder: rmarkdown, knitr
 Remotes:
     github::statnet/network@master,
