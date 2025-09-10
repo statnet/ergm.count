@@ -7,10 +7,10 @@
 \title{Fit, Simulate and Diagnose Exponential-Family Models for Networks with Count
 Edges}
 \description{
-\code{\link[=ergm.count-package]{ergm.count}} is a set of extensions to
-package \code{\link[=ergm-package]{ergm}} to fit and simulate from
-exponential-family random graph models for networks whose edge weights are
-counts \insertCite{Kr12e}{ergm.count}.
+\pkg{ergm.count} is a set of extensions to package \CRANpkg{ergm}
+to fit and simulate from exponential-family random graph models for
+networks whose edge weights are counts
+\insertCite{Kr12e}{ergm.count}.
 }
 \details{
 Mainly, it implements Poisson, binomial, geometric, and discrete
@@ -20,10 +20,6 @@ statistics (documented in \code{\link[ergm:ergmTerm]{ergmTerm}})
 \insertCite{Kr12e,KrHu23e}{ergm.count}, including
 \code{\link[=CMP-ergmTerm]{CMP}} for the Conway--Maxwell--Poisson Distribution
 \insertCite{ShMi05u}{ergm.count}.
-
-For a complete list of the functions, use \code{library(help="ergm")} and
-\code{library(help="ergm.count")} or read the rest of the manual.
-
 When publishing results obtained using this package, please cite the
 original authors as described in \code{citation(package="ergm.count")}.
 

@@ -36,17 +36,18 @@
 #'
 #' @name zach
 #' @docType data
-#' @format The data are represented as a \code{\link{network}} object, with an
+#' @format The data are represented as a [`network`] object, with an
 #' edge attribute \code{contexts}, giving the number of contexts of interaction
 #' for that pair of actors. In addition, the following vertex attributes are
-#' provided: \describe{ \item{list("club")}{the club in which the actor ended
-#' up;}\item{:}{the club in which the actor ended up;}
-#' \item{list("faction")}{faction alignment of the actor as recorded by
-#' Zachary}\item{:}{faction alignment of the actor as recorded by Zachary}
-#' \item{list("faction.id")}{faction alignment coded numerically, as \eqn{-2}
+#' provided:
+#' \describe{
+#' \item{`club`:}{the club in which the actor ended up;}
+#' \item{`faction`:}{faction alignment of the actor as recorded by Zachary;}
+#' \item{`faction.id`:}{faction alignment coded numerically, as \eqn{-2}
 #' (strongly Mr. Hi's), \eqn{-1} (weakly Mr. Hi's), \eqn{0} (neutral), \eqn{+1}
-#' (weakly John's), and \eqn{+2} (strongly John's);} \item{list("role")}{role
-#' of the actor in the network (Instructor, Member, or President)} }
+#' (weakly John's), and \eqn{+2} (strongly John's);}
+#' \item{`role`:}{role of the actor in the network (Instructor, Member, or President)}
+#' }
 #' @references Zachary, WW (1977). An Information Flow Model for Conflict and
 #' Fission in Small Groups. \emph{Journal of Anthropological Research}, 33(4),
 #' 452-473.
