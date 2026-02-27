@@ -58,8 +58,9 @@
 #' @concept valued
 #'
 #' @template ergmReference-general
-InitErgmReference.Poisson <- function(lhs.nw, ...){
-  list(name="Poisson", init_methods = c("CD","zeros"))
+InitErgmReference.Poisson <- function(nw, arglist, ...) {
+  check.ErgmTerm(nw, arglist)
+  list(name="Poisson", init_methods = c("CD", "zeros"))
 }
 
 #' @templateVar name Binomial
@@ -84,8 +85,13 @@ InitErgmReference.Poisson <- function(lhs.nw, ...){
 #' @concept valued
 #'
 #' @template ergmReference-general
-InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
-  list(name="Binomial", arguments=list(trials=trials), init_methods = c("CD","zeros"))
+InitErgmReference.Binomial <- function(nw, arglist, ...) {
+  a <- check.ErgmTerm(nw, arglist,
+                      varnames = c("trials"), vartypes = c("numeric"))
+  if (a$trials != round(a$trials) || a$trials < 1 || a$trials == Inf)
+    ergm_Init_stop(sQuote("trials"), " must be a positive integer.")
+  list(name = "Binomial", arguments = list(trials = a$trials),
+       init_methods = c("CD", "zeros"))
 }
 
 #' @templateVar name Geometric
@@ -112,6 +118,8 @@ InitErgmReference.Binomial <- function(lhs.nw, trials, ...){
 #' @concept valued
 #'
 #' @template ergmReference-general
-InitErgmReference.Geometric <- function(lhs.nw, ...){
-  list(name="Geometric", init_methods = c("CD","zeros"))
+InitErgmReference.Geometric <- function(nw, arglist, ...) {
+  check.ErgmTerm(nw, arglist,
+                 nonnegative = TRUE)
+  list(name = "Geometric", init_methods = c("CD", "zeros"))
 }
